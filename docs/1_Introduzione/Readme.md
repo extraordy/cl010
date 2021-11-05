@@ -1,10 +1,14 @@
-# Introduzione a KVM
+# Introduzione a Openstack
 
 <p align="center">
-    <img src="images/kvm.png" alt="KVM" width="600"/>
+    <img src="images/openstack.png" alt="Openstack" width="600"/>
 </p>
+Openstack è la tecnologia sviluppata attivamente da Red Hat e originariamente creata dalla *NASA* con l'obiettivo finale di creare un sistema completamente open source in grado di deployare un proprio cloud su un parco macchine aziendale.
+La forza di Openstack è la sua possibilità di garantirci varie tipologie di deploy per il nostro cloud, ossia Public, private e hybrid.
 
 ## Cloud: esistono differenze?
+*Si!* 
+La differenza più grande che possiamo vedere è quella di utilizzo, ossia per quanto Openstack sia potente rimane comunque un coltellino svizzero,
 
 ## Vantaggi del cloud privato
 * **Motivo 1** 

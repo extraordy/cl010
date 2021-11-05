@@ -11,8 +11,9 @@ Questo repository è relativo al riassunto di quanto trattato alla Technical Ove
 La documentazione è possibile trovarla sotto `docs/`, qui sotto l'indice degli argomenti:
 
 - [1 - Introduzione e deployment](docs/1_Introduzione/Readme.md)
-- [2 - Management dello storage via cinder](docs/2_Storage/README.md)
-- [3 - Networking](docs/3_Networking/Readme.md)
+- [2 - Comandi base di Openstack](docs/2_Comandi_base.Readme.md)
+- [2 - Management dello storage via cinder](docs/3_Storage/Readme.md)
+- [3 - Networking](docs/4_Networking/Readme.md)
 
 
 ## Ringraziamenti
