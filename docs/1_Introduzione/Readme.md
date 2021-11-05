@@ -1,12 +1,12 @@
 # Introduzione a Openstack
-### Table of content
-<a href="#Cos'è openstack?">Cos'è openstack??</a><br>
-<a href="#Cloud: esistono differenze?">Cloud: esistono differenze?</a><br>
-<a href="#Installazione">Installazione</a><br>
-
+# Table of Contents
+1. [Cos'è openstack](#Cos'è-openstack?)
+2. [Cloud: esistono differenze?](#Cloud:-esistono-differenze?)
+3. [Vantaggi del cloud privato](#Vantaggi-del-cloud-privato)
+4. [Installazione](#Installazione)
 
 <p align="center">
-    <img src="images/openstack.png" alt="Openstack" width="600"/>
+    <img src="images/openlogo.png" alt="Openstack" width="600"/>
 </p>
 
 ## Cos'è openstack?
@@ -21,8 +21,8 @@ La differenza più grande che possiamo vedere è quella di utilizzo, ossia per q
 * **Privacy** 
 * **Management interno all'azienda**
 ### Perché proprio openstack?
-- ciao
-- ciao 2
+- primo
+- secondo
 
 ## Installazione
 
