@@ -5,10 +5,6 @@ Openstack è la tecnologia sviluppata attivamente da Red Hat e originariamente c
 La forza di Openstack è la sua possibilità di garantirci varie tipologie di deploy per il nostro cloud, ossia Public, private e hybrid.
 Ad oggi ben 500 aziende  (tra cui red Hat, Oracle, IBM e molti altri big del settore) supportano attivamente Openstack.
 
-### Cloud: esistono differenze?
-_Si!_ <br>
-La differenza più grande che possiamo vedere è quella di utilizzo, ossia per quanto Openstack sia potente rimane comunque un coltellino svizzero,
-
 ### Vantaggi del cloud privato
 * **Creazione di expertise interno**
     Ovviamente l'adozione di una tecnologia come Openstack permette di creare expertise dal grande valore commerciale all'interno dell'azienda, evitando di dipendere da tool o aziende esterne per l'infrastruttura aziendale.
@@ -24,8 +20,7 @@ La differenza più grande che possiamo vedere è quella di utilizzo, ossia per q
 * **Community driven**
     Come tutti i progetti Open source anche Openstack beneficia enormemente dal supporto di una grossa community di professionisti capaci e formati, che aiutano il progetto a crescere e migliorare ogni giorno di più, oltre ad ovviamente il supporto offerto da Red Hat e i Red Hat partner come EXTRAORDY, nei corsi di formazione come il CL110 e CL210 (Openstack Adminsitrator I e II).
 ### Perché proprio openstack?
-- primo
-- secondo
+Perché Red Hat ha speso milioni nel supportare questo progetto al fine di renderlo il miglior prodotto per la gestione di un cloud, restando completamente fedele alle radici Open source del progetto; questo garantisce la possiblità di essere modificato in modo che sia il tool ad adattarsi alle esigenze aziendali e non il contario.
 
 ## Come possiamo installare Openstack?
 Si può installare Openstack utilizzando il repository [RDO](https://www.rdoproject.org/install/packstack/), tramite l'applicativo Packstack, che permette di effettuare un'installazione all-in-one in maniera semplice ed efficente.
