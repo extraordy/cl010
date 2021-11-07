@@ -13,8 +13,7 @@ La differenza più grande che possiamo vedere è quella di utilizzo, ossia per q
 * **Creazione di expertise interno**
     Ovviamente l'adozione di una tecnologia come Openstack permette di creare expertise dal grande valore commerciale all'interno dell'azienda, evitando di dipendere da tool o aziende esterne per l'infrastruttura aziendale.
     Inoltre fornisce la possibilità futura di crescita aggiungendo anche la possiblità di offrire questo servizio ai futuri clienti della vostra azienda.
-
-* ** Openstack Cloud **
+* **Openstack Cloud**
     Nel caso foste esclusivamente interessati a Openstack ma non a tutti i grattacapi che porta doverlo configurare e mantenere, esiste la possibilità di ottenerne uno in Cloud!
     Questo permetterà a voi di non dover pensare alle configurazioni e ad un prezzo estemamente competitivo avrete a disposizione un istanza cloud di Openstack, con tutti i vantaggi del caso e nessun bisogno di avere Hardware in azienda.
 * **Management interno all'azienda**
