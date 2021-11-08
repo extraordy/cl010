@@ -1,8 +1,7 @@
 # Introduzione allo storage con cinder
 
-
-## Creazione di un volume 
-
+## Parte 0: Creazione di un volume 
+### Esercizio
 Per creare un volume su Openstack lanciamo il comando:
 
 ```console
@@ -19,7 +18,8 @@ Una volta creato il volume lanciamo il comando:
 +--------------------------------------+---------------+-----------+------+-------------+
 ```
 
-## Attach di un volume
+## Parte 1: Attach di un volume
+### Esercizio
 Per attaccare un volume su ad un istanza su Openstack lanciamo il comando:
 
 ```console
@@ -38,7 +38,8 @@ mkdir /vdb
 mount -t ext4 /dev/vdb /vdb
 ```
 
-## Detach di un volume
+## Parte 2: Detach di un volume
+### Esercizio
 E' possibile effetture il detach del volume, prima assicuratevi di aver smontato il disco dal mountpoint sull'istanza precedentemente creato:
 
 ```console
@@ -46,7 +47,8 @@ E' possibile effetture il detach del volume, prima assicuratevi di aver smontato
 ```
 A questo punto il volume è stato smontato dell'istanza ma è ancora presente su Openstack, non ci resta che proseguire con l'eliminazione.
 
-## Eliminazione del volume
+## Parte 4: Eliminazione del volume
+### Esercizio
 E' possibile infine rimuovere il volume che abbiamo creato all'inizio con il comando:
 ```console
 [user@machine - (cl010u cl010)]openstack volume delete my-new-volume
