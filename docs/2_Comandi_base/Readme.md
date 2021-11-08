@@ -61,10 +61,10 @@ Ovviamente la nostra istanza non partirà istantaneamente in quanto richede qual
 
 ## Parte 3: Caricamento di impostazioni e immagini da riga di comando
 ### Esercizio
-**- Accedere via command line a Openstack, utilizzando i file keystonerc <br>
-- caricare un ISO su Openstack <br>
-- Creare un'istanza da riga di comando
-**
+- **Accedere via command line a Openstack, utilizzando i file keystonerc** <br>
+- **Caricare un ISO su Openstack** <br>
+- **Creare un'istanza da riga di comando**
+
 ### Soluzione
 #### Accedere via command line
 I files keystonerc caricano delle env variables che ci permettono di accedere facilmente alla nostra istanza di Openstack da riga di comando senza bisogno di ricordarci password o altro; per caricarle in memoria basta dare
@@ -97,7 +97,7 @@ Una volta osservato tutte le opzioni decidiamo di creare una macchina come quell
 ```
 Questo comando creerà una macchina chiamata cl010_VM2 sul network creato precedentemente (vedasi parte 2 di questo documento), con la stessa immagine battezzata cirros e con m1.tiny come flavour.
 
-Fatto questo ci verrà ritornata una tabella con i parametri della VM appena creata e,attendendo qualche secondo, diamo nuovamente il comando ** openstack server list** per verificare che la creazione sia andata a buon fine: se tutto è ok la VM2 dovrebbe avere lo status ACTIVE.
+Fatto questo ci verrà ritornata una tabella con i parametri della VM appena creata e,attendendo qualche secondo, diamo nuovamente il comando **openstack server list** per verificare che la creazione sia andata a buon fine: se tutto è ok la VM2 dovrebbe avere lo status ACTIVE.
 
 Per verificare il corretto funzionamento delle macchine basterà andare sul pannello di controllo nella sezione delle istanze e aprire la tendina della colonna action della VM che ci interessa; qui tra i vari comandi troveremo console che ci attaccherà direttamente alla console della nostra macchina dove in questo caso ci verrano forniti a login i dati d'accesso in quanto cirrOS ha questa feature per facilitare il testing delle VM; questa feature è estremamente insicura per un ambiente di produzione e consigliamo l'uso del sistema cirrOS esclusivamente in ambito di testing.
 
@@ -106,7 +106,9 @@ Per verificare il corretto funzionamento delle macchine basterà andare sul pann
 **Creiamo o carichiamo delle chiavi SSH nella nostra istanza di Openstack**
 ### Soluzione
 Andando nella tab
+
 > project -> compute -> key pairs
+
 Si possono caricare (ovviamente la parte pubblica) o creare (verrà fatta scaricare la parte privata della chiave mentre la pubblica verrà direttamente caricata) chiavi SSH per poter accedere all'istanza in modo passwordless. 
 Da command line invece posso fare la stessa operazione con il comando (NB: è un comando unico, l'escape serve solo ad indicare che stiamo andando a capo, stessa cosa per il maggiore sulla seconda riga, non devono essere riportati e dovete dare il comando senza andare a capo).
 ```console
