@@ -28,15 +28,17 @@ Per attaccare un volume su ad un istanza su Openstack lanciamo il comando:
 
 > N.B.: Per recuperare l'id_istanza è possibile lanciare il comando openstack server list, il --device indica l'assegnazione del disco sull'instanza.
 
-```console[user@machine - (cl010u cl010)]openstack volume list
+Una volta creato il volume lanciamo il comando 
+```console
+[user@machine - (cl010u cl010)]openstack volume list
 +--------------------------------------+---------------+-----------+------+-------------+
 | ID                                   | Name          |  Status   | Size | Attached to |
 +--------------------------------------+---------------+-----------+------+-------------+
-| bab4b0e0-ce3d-4d57-bf57-3c51319f5202 | my-new-volume | attached  | 8    | my_istance  |
+| bab4b0e0-ce3d-4d57-bf57-3c51319f5202 | my-new-volume | attacched | 8    | my_instance |
 +--------------------------------------+---------------+-----------+------+-------------+
 ```
 
-Una volta attaccato il volume all'istanza e dopo aver creato un filesystem, è possibile montarlo collegando in ssh sulla nostra istanza o direttamente dalla console dell'istanza su openstack:
+Una volta agganciato il volume all'istanza e dopo aver creato il filesystem, è possibile montarlo collegando in ssh sulla nostra istanza o direttamente dalla console dell'istanza su openstack:
 
 ```console
 mkfs -t ext4 /dev/vdb
