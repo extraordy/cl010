@@ -9,7 +9,7 @@ Per creare un volume su Openstack lanciamo il comando:
 [user@machine - (cl010u cl010)] openstack volume create --size 8 my-new-volume 
 ```
 
-Una volta creato il volume lanciamo il comando 
+Una volta creato il volume lanciamo il comando:
 ```console
 [user@machine - (cl010u cl010)]openstack volume list
 +--------------------------------------+---------------+-----------+------+-------------+
@@ -39,7 +39,7 @@ mkdir /vdb
 mount -t ext4 /dev/vdb /vdb
 ```
 
-##Detach di un volume con Cinder
+## Detach di un volume con Cinder
 E' possibile effetture il detach del volume, prima assicuratevi di aver il disco dal mountpoint sull'istanza precedentemente creato:
 
 ```console
