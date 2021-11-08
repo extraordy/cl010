@@ -1,7 +1,7 @@
 # Introduzione allo storage con cinder
 
 
-##Creazione di un volume con Cinder
+## Creazione di un volume con Cinder
 
 Per creare un volume su Openstack lanciamo il comando:
 
@@ -19,7 +19,7 @@ Una volta creato il volume lanciamo il comando
 +--------------------------------------+---------------+-----------+------+-------------+
 ```
 
-##Attach di un volume con Cinder
+## Attach di un volume con Cinder
 Per attaccare un volume su ad un istanza su Openstack lanciamo il comando:
 
 ```console
