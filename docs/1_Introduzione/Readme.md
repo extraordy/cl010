@@ -5,22 +5,20 @@ Openstack è la tecnologia sviluppata attivamente da Red Hat e originariamente c
 La forza di Openstack è la sua possibilità di garantirci varie tipologie di deploy per il nostro cloud, ossia Public, private e hybrid.
 Ad oggi ben 500 aziende  (tra cui red Hat, Oracle, IBM e molti altri big del settore) supportano attivamente Openstack.
 
-### Vantaggi del cloud privato
+### Perché proprio Openstack?
+* **Management interno all'azienda**
+    L'infrastruttura IaaS permette di scalare con estrema facilità le risorse assegnate alle varie macchine senza bisogno di richiedere ad esterni o pagare per spostare risorse tra macchine etc..
+    La scalabilità inoltre può essere regolata per seguire il picco di traffico sui propri server, garantendo così il miglior servizio possibile senza alcuno spreco di risorse e, soprattutto, senza spese aggiuntive.
+* **Automation**
+    Openstack offre moltissime opzioni per automatizzare task tramite API, rendendo il lavoro del sistemista che lo mantiene più semplice e liberando tempo per compiti più importanti.
 * **Creazione di expertise interno**
     Ovviamente l'adozione di una tecnologia come Openstack permette di creare expertise dal grande valore commerciale all'interno dell'azienda, evitando di dipendere da tool o aziende esterne per l'infrastruttura aziendale.
     Inoltre fornisce la possibilità futura di crescita aggiungendo anche la possiblità di offrire questo servizio ai futuri clienti della vostra azienda.
 * **Openstack Cloud**
     Nel caso foste esclusivamente interessati a Openstack ma non a tutti i grattacapi che porta doverlo configurare e mantenere, esiste la possibilità di ottenerne uno in Cloud!
     Questo permetterà a voi di non dover pensare alle configurazioni e ad un prezzo estemamente competitivo avrete a disposizione un istanza cloud di Openstack, con tutti i vantaggi del caso e nessun bisogno di avere Hardware in azienda.
-* **Management interno all'azienda**
-    L'infrastruttura IaaS permette di scalare con estrema facilità le risorse assegnate alle varie macchine senza bisogno di richiedere ad esterni o pagare per spostare risorse tra macchine etc..
-    La scalabilità inoltre può essere regolata per seguire il picco di traffico sui propri server, garantendo così il miglior servizio possibile senza alcuno spreco di risorse e, soprattutto, senza spese aggiuntive.
-* **Automation**
-    Openstack offre moltissime opzioni per automatizzare task tramite API, rendendo il lavoro del sistemista che lo mantiene più semplice e liberando tempo per compiti più importanti.
 * **Community driven**
     Come tutti i progetti Open source anche Openstack beneficia enormemente dal supporto di una grossa community di professionisti capaci e formati, che aiutano il progetto a crescere e migliorare ogni giorno di più, oltre ad ovviamente il supporto offerto da Red Hat e i Red Hat partner come EXTRAORDY, nei corsi di formazione come il CL110 e CL210 (Openstack Adminsitrator I e II).
-### Perché proprio openstack?
-Perché Red Hat ha speso milioni nel supportare questo progetto al fine di renderlo il miglior prodotto per la gestione di un cloud, restando completamente fedele alle radici Open source del progetto; questo garantisce la possiblità di essere modificato in modo che sia il tool ad adattarsi alle esigenze aziendali e non il contario.
 
 ## Come possiamo installare Openstack?
 #### Requirement
