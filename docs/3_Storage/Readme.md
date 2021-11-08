@@ -44,7 +44,7 @@ E' possibile effetture il detach del volume, prima assicuratevi di aver smontato
 ```console
 [user@machine - (cl010u cl010)]openstack server remove volume volume id_ volume id_istanza
 ```
-A questo punto il volume è stato smontato dell'istanza ma è ancora presente su Openstack, non ci resta che proseguire con l'eliminazione del volume.
+A questo punto il volume è stato smontato dell'istanza ma è ancora presente su Openstack, non ci resta che proseguire con l'eliminazione.
 
 ## Eliminazione del volume
 E' possibile infine rimuovere il volume che abbiamo creato all'inizio con il comando:
