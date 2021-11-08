@@ -45,5 +45,8 @@ E' possibile effetture il detach del volume, prima assicuratevi di aver smontato
 ```console
 [user@machine - (cl010u cl010)]openstack server remove volume volume id_ volume id_istanza
 ```
-
-
+## Eliminazione del volume con Cinder
+```console
+[user@machine - (cl010u cl010)]E' possibile infine rimuovere il volume che abbiamo creato all'inizio con il comando:
+ openstack volume delete my-new-volume
+```
