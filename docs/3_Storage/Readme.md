@@ -26,11 +26,8 @@ Per attaccare un volume su ad un istanza su Openstack lanciamo il comando:
 [user@machine - (cl010u cl010)] openstack server add volume id_ volume id_istanza --device /dev/sdb
 ```
 
-```console
-__N.B.Per recuperare l'id_istanza è possibile lanciare il comando openstack server list, il --device indica l'assegnazione del disco sull'instanza.__
+> N.B.:Per recuperare l'id_istanza è possibile lanciare il comando openstack server list, il --device indica l'assegnazione del disco sull'instanza.
 
-
-```
 
 Una volta attaccato il volume all'istanza e dopo aver creato un filesystem, è possibile montarlo collegando in ssh sulla nostra istanza o direttamente dalla console dell'istanza
 su openstack:
