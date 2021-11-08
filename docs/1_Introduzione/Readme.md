@@ -23,7 +23,10 @@ Ad oggi ben 500 aziende  (tra cui red Hat, Oracle, IBM e molti altri big del set
 Perché Red Hat ha speso milioni nel supportare questo progetto al fine di renderlo il miglior prodotto per la gestione di un cloud, restando completamente fedele alle radici Open source del progetto; questo garantisce la possiblità di essere modificato in modo che sia il tool ad adattarsi alle esigenze aziendali e non il contario.
 
 ## Come possiamo installare Openstack?
-Si può installare Openstack utilizzando il repository [RDO](https://www.rdoproject.org/install/packstack/), tramite l'applicativo Packstack, che permette di effettuare un'installazione all-in-one in maniera semplice ed efficente.
+#### Requirement
+I requirement minimi per l'installazione sono una macchina con CPU capace di virtualizzazione, consigliamo 16GB di RAM (possibilmente dedicata, almeno installati) anche se alcuni siti dichiarano sia possibile 8GB e almeno una scheda di rete; inoltre si consiglia di avere almeno 20GB di spazio disponibile su disco per avere abbastanza spazio di manovra per creare qualche istanza e qualche volume.
+#### Processo d'installazione
+Si può installare Openstack utilizzando il repository [RDO](https://www.rdoproject.org/install/packstack/): nel nostro caso installeremo tramite l'applicativo Packstack, che permette di effettuare un'installazione all-in-one, ossia tutto contenuto in una singola macchina; questo setup è ottimo per una fase di testing a livello personale ma non è utilizzabile per un uso enterprise.
 Per una RHEL 8 i comandi sono i seguenti:
 ```console
 [user@machine] $ sudo dnf install -y https://www.rdoproject.org/repos/rdo-release.el8.rpm
@@ -33,4 +36,4 @@ Per una RHEL 8 i comandi sono i seguenti:
 [user@machine] $ sudo packstack --allinone
 ```
 
-I requirement minimi per l'installazione sono una macchina con CPU capace di virtualizzazione, 16GB di RAM (possibilmente dedicata, almeno installati) e almeno una scheda di rete.
+Nel caso voleste utilizzare un diverso sistema operativo o una versione meno recente di RHEL potete andare [sul sito di RDO](https://www.rdoproject.org/install/packstack/) dove troverete tutte le relative informazioni.
