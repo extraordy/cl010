@@ -13,8 +13,8 @@ La documentazione è possibile trovarla sotto `docs/`, qui sotto l'indice degli 
 - [1 - Introduzione e deployment](docs/1_Introduzione/Readme.md)
 - [2 - Installazione](docs/2_Installazione/Readme.md)
 - [3 - Comandi base](docs/3_Comandi_base/Readme.md)
-- [4 - Management dello storage via cinder](docs/3_Storage/Readme.md)
-- [5 - Networking](docs/4_Networking/Readme.md)
+- [4 - Management dello storage via cinder](docs/4_Storage/Readme.md)
+- [5 - Networking](docs/5_Networking/Readme.md)
 
 
 ## Ringraziamenti
