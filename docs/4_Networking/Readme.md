@@ -41,7 +41,7 @@ Create Subnet: seleziona questa casella di controllo per creare una sottorete
 
 - Disable Gateway: selezionare questa casella di controllo per disabilitare un indirizzo IP del gateway.
 
-Details sottorete:
+Dettagli sottorete:
 
 - Enable DHCP: selezionare questa casella di controllo per abilitare DHCP.
 
