@@ -23,15 +23,15 @@ Successivamente è possibile proseguire verificando il volume creato:
 
 ## Parte 1: Attach di un volume
 ### Esercizio
-Per agganicare un volume ad un istanza su Openstack lanciamo il comando:
+Per agganciare un volume ad un'istanza su Openstack lanciamo il comando:
 
 ```console
 [user@machine - (cl010u cl010)] openstack server add volume id_ volume id_istanza --device /dev/sdb
 ```
 
-> N.B.: Per recuperare l'id_istanza è possibile lanciare il comando openstack server list, il --device indica l'assegnazione del disco sull'instanza.
+> N.B.: Per recuperare l'id_istanza è possibile lanciare il comando **openstack server list**, il --device indica l'assegnazione del disco sull'instanza.
 
-Il volume ora risulta "in-use" collegato alla nostra istanza, per verificare:
+Il volume ora risulta "**in-use**" collegato alla nostra istanza, per verificare:
 ```console
 [user@machine - (cl010u cl010)]openstack volume list
 +--------------------------------------+---------------+-----------+------+-------------------------------------+
@@ -41,7 +41,7 @@ Il volume ora risulta "in-use" collegato alla nostra istanza, per verificare:
 +--------------------------------------+---------------+-----------+------+-------------------------------------+
 ```
 
-Una volta agganciato il volume all'istanza e dopo aver creato il filesystem, è possibile montarlo collegando in ssh sulla nostra istanza o direttamente dalla console dell'istanza su openstack:
+Una volta agganciato il volume e dopo aver creato il filesystem, è possibile montarlo collegandosi in ssh o direttamente dalla console della dashboard:
 
 ```console
 mkfs -t ext4 /dev/vdb
@@ -51,12 +51,12 @@ mount -t ext4 /dev/vdb /vdb
 
 ## Parte 2: Detach di un volume
 ### Esercizio
-E' possibile effetture il detach del volume, prima assicuratevi di aver smontato il disco dal mountpoint sull'istanza precedentemente creato:
+E' possibile effetture il detach del volume, prima assicuratevi di aver smontato il disco dal mountpoint precedentemente creato:
 
 ```console
 [user@machine - (cl010u cl010)]openstack server remove volume volume id_ volume id_istanza
 ```
-A questo punto il volume è stato smontato dell'istanza ma è ancora presente su Cinder, non ci resta che proseguire con l'eliminazione.
+A questo punto il volume è stato smontato dall'istanza ma è ancora presente su Cinder, non ci resta che proseguire con l'eliminazione.
 
 ## Parte 4: Eliminazione del volume
 ### Esercizio
