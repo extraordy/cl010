@@ -45,6 +45,6 @@ DNS Name Servers: specificare un nome per il server DNS.
 
 Route host: specificare l'indirizzo IP delle route host. 
 
-Clicca crea.
+Clicca Crea.
 
 
