@@ -1,6 +1,9 @@
 # Introduzione allo storage con cinder
 
 ## Parte 0: Creazione di un volume con Openstack
+
+I volumi sono dispositivi di archiviazione a blocchi collegati alle istanze. Puoi collegare un volume a un'istanza in esecuzione o scollegare un volume e collegarlo a un'altra istanza in qualsiasi momento.
+
 ### Esercizio
 Cominciamo con il creare un volume :
 
