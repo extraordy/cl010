@@ -17,11 +17,11 @@ Fare clic su **Create Network**.
 
 Nella finestra di dialogo **Create Network**, specificare i seguenti valori;
 
-Network Name: specificare un nome per identificare la rete.
+- Network Name: specificare un nome per identificare la rete.
 
-Shared: condividi la rete con altri progetti.
+- Shared: condividi la rete con altri progetti.
 
-Admin State: lo stato in cui avviare la rete.
+- Admin State: lo stato in cui avviare la rete.
 
 Create Subnet: seleziona questa casella di controllo per creare una sottorete
 
@@ -31,25 +31,25 @@ Create Subnet: seleziona questa casella di controllo per creare una sottorete
 
 ### Esercizio
 
-Subnet Name: specificare un nome per la sottorete.
+- Subnet Name: specificare un nome per la sottorete.
 
-Network Address: specificare l'indirizzo IP per la sottorete.
+- Network Address: specificare l'indirizzo IP per la sottorete.
 
-IP Version: selezionare IPv4 o IPv6.
+- IP Version: selezionare IPv4 o IPv6.
 
-Gateway IP: specificare un indirizzo IP per un gateway specifico. Questo parametro è facoltativo.
+- Gateway IP: specificare un indirizzo IP per un gateway specifico. Questo parametro è facoltativo.
 
-Disable Gateway: selezionare questa casella di controllo per disabilitare un indirizzo IP del gateway.
+- Disable Gateway: selezionare questa casella di controllo per disabilitare un indirizzo IP del gateway.
 
 Details sottorete:
 
-Enable DHCP: selezionare questa casella di controllo per abilitare DHCP.
+- Enable DHCP: selezionare questa casella di controllo per abilitare DHCP.
 
-Allocation Pools: specificare i pool di indirizzi IP.
+- Allocation Pools: specificare i pool di indirizzi IP.
 
-DNS Name Servers: specificare un nome per il server DNS.
+- DNS Name Servers: specificare un nome per il server DNS.
 
-Route host: specificare l'indirizzo IP delle route host. 
+- Route host: specificare l'indirizzo IP delle route host. 
 
 Clicca Crea.
 
