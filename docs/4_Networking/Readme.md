@@ -13,7 +13,7 @@ Seleziona il **Project** appropriato dal menu a tendina in alto a sinistra.
 
 Nella scheda **Project**, apri la scheda **Network** e fai clic sulla categoria Network.
 
-Fare clic su **Create** **Network**.
+Fare clic su **Create Network**.
 Nella finestra di dialogo **Create** **Network,** specificare i seguenti valori;
 Network Name: specificare un nome per identificare la rete.
 Shared: condividi la rete con altri progetti.
