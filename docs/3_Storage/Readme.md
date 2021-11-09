@@ -1,14 +1,14 @@
 # Introduzione allo storage con cinder
 
-## Parte 0: Creazione di un volume 
+## Parte 0: Creazione di un volume con Openstack
 ### Esercizio
-Per creare un volume su Openstack lanciamo il comando:
+Cominciamo con il creare un volume :
 
 ```console
 [user@machine - (cl010u cl010)] openstack volume create --size 8 my-new-volume 
 ```
 
-Una volta creato il volume lanciamo il comando:
+Successivamente è possibile proseguire verificando il volume creato:
 ```console
 [user@machine - (cl010u cl010)]openstack volume list
 +--------------------------------------+---------------+-----------+------+-------------+
@@ -20,7 +20,7 @@ Una volta creato il volume lanciamo il comando:
 
 ## Parte 1: Attach di un volume
 ### Esercizio
-Per attaccare un volume su ad un istanza su Openstack lanciamo il comando:
+Per agganicare un volume ad un istanza su Openstack lanciamo il comando:
 
 ```console
 [user@machine - (cl010u cl010)] openstack server add volume id_ volume id_istanza --device /dev/sdb
@@ -28,7 +28,7 @@ Per attaccare un volume su ad un istanza su Openstack lanciamo il comando:
 
 > N.B.: Per recuperare l'id_istanza è possibile lanciare il comando openstack server list, il --device indica l'assegnazione del disco sull'instanza.
 
-Una volta attaccato il volume lanciamo il comando per verificare 
+Il volume ora risulta "in-use" collegato alla nostra istanza, per verificare:
 ```console
 [user@machine - (cl010u cl010)]openstack volume list
 +--------------------------------------+---------------+-----------+------+-------------------------------------+
@@ -53,7 +53,7 @@ E' possibile effetture il detach del volume, prima assicuratevi di aver smontato
 ```console
 [user@machine - (cl010u cl010)]openstack server remove volume volume id_ volume id_istanza
 ```
-A questo punto il volume è stato smontato dell'istanza ma è ancora presente su Openstack, non ci resta che proseguire con l'eliminazione.
+A questo punto il volume è stato smontato dell'istanza ma è ancora presente su Cinder, non ci resta che proseguire con l'eliminazione.
 
 ## Parte 4: Eliminazione del volume
 ### Esercizio
