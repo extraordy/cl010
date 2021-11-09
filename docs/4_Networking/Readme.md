@@ -17,4 +17,8 @@ Shared: condividi la rete con altri progetti.
 Admin State: lo stato in cui avviare la rete.
 Create Subnet: seleziona questa casella di controllo per creare una sottorete
 
-N.B,: Non è necessario specificare una sottorete quando crei una rete, ma se non specifichi una sottorete, la rete non può essere collegata a un'istanza. 
+>N.B,: Non è necessario specificare una sottorete quando crei una rete, ma se non specifichi una sottorete, la rete non può essere collegata a un'istanza. 
+
+
+###Creazione di una Subnet
+
