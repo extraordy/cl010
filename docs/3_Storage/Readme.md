@@ -58,7 +58,7 @@ E' possibile effetture il detach del volume, prima assicuratevi di aver smontato
 ```
 A questo punto il volume è stato smontato dall'istanza ma è ancora presente su Cinder, non ci resta che proseguire con l'eliminazione.
 
-## Parte 4: Eliminazione del volume
+## Parte 3: Eliminazione del volume
 ### Esercizio
 E' possibile infine rimuovere il volume che abbiamo creato all'inizio con il comando:
 ```console
