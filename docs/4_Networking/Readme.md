@@ -10,6 +10,7 @@ Il servizio netwoking di Openstack fornisce un sistema scalabile per la gestione
 Accedi alla **dashboard**.
 
 Seleziona il **Project** appropriato dal menu a tendina in alto a sinistra.
+
 Nella scheda **Project**, apri la scheda **Network** e fai clic sulla categoria Network.
 
 Fare clic su **Create** **Network**.
