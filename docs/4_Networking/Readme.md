@@ -1,4 +1,4 @@
-# Networking in Openstack
+# Networking
 
 ##Le reti Software Defined
 Il servizio netwoking di Openstack fornisce un sistema scalabile per la gestione della connettività di rete all'interno di un'implementazione cloud OpenStack. Può reagire facilmente e rapidamente alle mutevoli esigenze della rete (ad esempio, creando e assegnando nuovi indirizzi IP). 
