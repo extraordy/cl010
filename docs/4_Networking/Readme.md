@@ -1,11 +1,12 @@
-## Networking
+# Networking
 
-##Le reti Software Defined
+## Le reti Software Defined
 
 Il servizio netwoking di Openstack fornisce un sistema scalabile per la gestione della connettività di rete all'interno di un'implementazione cloud OpenStack. Può reagire facilmente e rapidamente alle mutevoli esigenze della rete (ad esempio, creando e assegnando nuovi indirizzi IP). 
 
-##Creazione di una Network
+## Creazione di una Network
 
+### Esercizio
 Accedi alla **dashboard.
 
 Seleziona il **Project appropriato dal menu a tendina in alto a sinistra.
@@ -20,6 +21,8 @@ Create Subnet: seleziona questa casella di controllo per creare una sottorete
 
 >N.B,: Non è necessario specificare una sottorete quando crei una rete, ma se non specifichi una sottorete, la rete non può essere collegata a un'istanza. 
 
+## Creazione di una Subnet
 
-###Creazione di una Subnet
+### Esercizio
+
 
