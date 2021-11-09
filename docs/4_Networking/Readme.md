@@ -7,13 +7,13 @@ Il servizio netwoking di Openstack fornisce un sistema scalabile per la gestione
 ## Creazione di una Network
 
 ### Esercizio
-Accedi alla **dashboard.
+Accedi alla **dashboard**.
 
-Seleziona il **Project appropriato dal menu a tendina in alto a sinistra.
-Nella scheda **Progetto, apri la scheda **Network e fai clic sulla categoria Network.
+Seleziona il **Project** appropriato dal menu a tendina in alto a sinistra.
+Nella scheda **Project**, apri la scheda **Network e fai clic sulla categoria Network.
 
-Fare clic su **Create **Network.
-Nella finestra di dialogo **Create **Network, specificare i seguenti valori;
+Fare clic su **Create** **Network**.
+Nella finestra di dialogo **Create** **Network,** specificare i seguenti valori;
 Network Name: specificare un nome per identificare la rete.
 Shared: condividi la rete con altri progetti.
 Admin State: lo stato in cui avviare la rete.
