@@ -18,7 +18,7 @@ Le convenzioni utilizzate saranno i nomi in minuscolo per gli utenti, quelli in 
 ### Soluzione
 Dalla dashboard che ci ritroviamo quando entriamo come utente admin possiamo creare un nuovo progetto accedendo alle tab (in ordine) 
 
-> identity -> project -> Create project
+> identity &#8594; project &#8594; Create project
 
 Qui possiamo creare un progetto chiamato CL010p.
 
@@ -37,7 +37,7 @@ Slogghiamoci ora dall'utente admin che abbiamo usato fin'ora e prepariamoci al p
 **Creare un'istanza su Openstack con un sistema operativo funzionante**
 ### Soluzione
 Prima di tutto dobbiamo caricare un sistema operativo funzionante all'interno del nostro sistema, pertanto accediamo con l'utente amministratore **cl010a** andiamo su 
-> project -> compute -> images
+> project &#8594; compute &#8594; images
 
 E qui andremo a caricare un'immagine molto particolare chiamata CirrOS, un sistema operativo Linux completo ma minimale, utile per testare il funzionamento di un sistema operativo in cloud; può essere reperito [qui](http://download.cirros-cloud.net/); nel caso voleste farlo da riga di comando nell'esercizio successivo (seconda sezione) viene indicato come fare.
 
@@ -45,7 +45,7 @@ Inoltre necessitiamo di avere una rete pronta, pertanto facciamo riferimento all
 
 Accediamo ora con il nostro utente **cl010u** precedentemente creato e una volta dentro ci dirigiamo nella sezione
 
-> project -> compute -> instances
+> project &#8594; compute &#8594; instances
 
 Un'importante distinzione, non __creiamo__ le istanze ma bensì le __lanciamo__ in quanto non sono come le vecchie macchine virtuali che richiedevano spazio dedicato e fisso, qui è tutto più rapido e fatto seguendo la logica cloud.
 
@@ -107,7 +107,7 @@ Per verificare il corretto funzionamento delle macchine basterà andare sul pann
 ### Soluzione
 Andando nella tab
 
-> project -> compute -> key pairs
+> project &#8594; compute &#8594; key pairs
 
 Si possono caricare (ovviamente la parte pubblica) o creare (verrà fatta scaricare la parte privata della chiave mentre la pubblica verrà direttamente caricata) chiavi SSH per poter accedere all'istanza in modo passwordless. 
 Da command line invece posso fare la stessa operazione con il comando (NB: è un comando unico, l'escape serve solo ad indicare che stiamo andando a capo, stessa cosa per il maggiore sulla seconda riga, non devono essere riportati e dovete dare il comando senza andare a capo).
