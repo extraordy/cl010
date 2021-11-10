@@ -71,6 +71,11 @@ Per rimuovere il Floating IP sarà sufficente:
 ```
 In questo modo la nostra istanza non sarà più raggiungibile dall'eterno, ma il Floating IP rimane disponibile nel pool e pronto per essere riassociato.
 
+Per eliminare il Floating ip dal pool:
+
+```console
+[user@machine - (cl010u cl010)] $ openstack floating ip delete FLOATING_IP
+```
 
 
 
