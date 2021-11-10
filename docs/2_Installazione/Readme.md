@@ -22,8 +22,7 @@ Una volta che ci siamo assicurati che la nostra macchina supporti la virtualizza
 
 Infine andremo a dare i seguenti comandi per creare ed avviare una macchina virtuale:
 ```console
-virt-install --virt-type=kvm --name=rhelVM --ram 4096 --vcpus 2 \
---os-variant=rhel8.5 --cdrom=$HOME/Downloads/rhel8-5.iso \
+[user@machine] $ sudo virt-install --virt-type=kvm --name=rhelVM --ram 4096 --vcpus 2 --os-variant=rhel8.5 --cdrom=$HOME/Downloads/rhel8-5.iso \
 --network=default --graphics vnc --disk size=20 
 ```
 Con ovviamente cdrom la path per la iso sul vostro sistema e disk size di almeno 20GB.
@@ -32,7 +31,7 @@ Una volta fatto questo vi verrà aperto un prompt che vi farà connettere alla v
 
 Se vorrete riaprire più avanti questa macchina potrete utilizzare virsh con i seguenti comandi rispettivamente per visualizzare tutte le macchine installate via QEMU e per avviare la macchina.
 ```console
-[user@machine] $ virsh list --all
+[user@machine] $ sudo virsh list --all
 Id      Name            State
 -------------------------------
 1       rhelVM        shut off
@@ -40,12 +39,12 @@ Id      Name            State
 ```
 Infine per spegnere il nostro laboratorio basterà dare:
 ```console
-[user@machine] $ virsh list
+[user@machine] $ sudo virsh list
 Id      Name            State
 -------------------------------
 1       rhelVM        running
 
-[user@machine] $ virsh stop rhelVM
+[user@machine] $ sudo virsh stop rhelVM
 ```
 ### Installazione del laboratorio di testing Openstack all-in-one
 Il nostro ambiente di environment verrà installato tramite [RDO](https://www.rdoproject.org/install/packstack/), un repository che contiene al suo interno Packstack.

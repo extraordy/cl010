@@ -1,4 +1,11 @@
 # Introduzione a Openstack
+
+---
+**ATTENZIONE**
+
+Per una soluzione grafica fate riferimento al corso CL010 che potete trovare qui: https://www.cl010.it
+
+---
 ## Parte 0: Dati amministratore
 I dati di accesso alla nostra istanza Openstack potranno essere trovati nel file keystonerc_admin, che si trova in maniera conveniente nella /root/ del nostro sistema operativo.
 
