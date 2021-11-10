@@ -7,50 +7,25 @@ Il servizio networking di Openstack fornisce un sistema scalabile per la gestion
 ## Creazione di una Network
 
 ### Esercizio
-Accedi alla **dashboard**.
+**Creiamo un rete chiamata network1**
+### Soluzione
+Cominciamo con il creare la rete:
 
-Seleziona il **Project** appropriato dal menu a tendina in alto a sinistra.
-
-Nella scheda **Project**, apri la scheda **Network** e fai clic sulla categoria Network.
-
-Fare clic su **Create Network**.
-
-Nella finestra di dialogo **Create Network**, specificare i seguenti valori;
-
-- Network Name: specificare un nome per identificare la rete.
-
-- Shared: condividi la rete con altri progetti.
-
-- Admin State: lo stato in cui avviare la rete.
-
-Create Subnet: seleziona questa casella di controllo per creare una sottorete
-
->N.B,: Non è necessario specificare una sottorete quando crei una rete, ma se non specifichi una sottorete, la rete non può essere collegata a un'istanza. 
+```console
+[user@machine - (cl010u cl010)] $ openstack network create network1
+```
 
 ## Creazione di una Subnet
 
 ### Esercizio
+**Creiamo un subnet chiamata subnet1**
+### Soluzione
+Creiamo la subnet:
+```console
+[user@machine - (cl010u cl010)] $ openstack subnet create subnet1 --network network1 --subnet-range 192.0.2.0/24
+```
+> N.B.: Con l'opzione --subnet-range 192.0.2.0/24 abbiamo creato l'indirizzamento della nostra rete interna, ricordare che i primi 2 IP della rete sono riservati a Openstack.
 
-- Subnet Name: specificare un nome per la sottorete.
 
-- Network Address: specificare l'indirizzo IP per la sottorete.
-
-- IP Version: selezionare IPv4 o IPv6.
-
-- Gateway IP: specificare un indirizzo IP per un gateway specifico. Questo parametro è facoltativo.
-
-- Disable Gateway: selezionare questa casella di controllo per disabilitare un indirizzo IP del gateway.
-
-Dettagli sottorete:
-
-- Enable DHCP: selezionare questa casella di controllo per abilitare DHCP.
-
-- Allocation Pools: specificare i pool di indirizzi IP.
-
-- DNS Name Servers: specificare un nome per il server DNS.
-
-- Route host: specificare l'indirizzo IP delle route host. 
-
-Clicca Crea.
 
 
