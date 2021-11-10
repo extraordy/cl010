@@ -12,7 +12,7 @@ I dati di accesso alla nostra istanza Openstack potranno essere trovati nel file
 Accediamo ora come utente sudo e andiamo a vedere il dato che ci interessa:
 ```console
 [user@machine] $ su
-[user@machine] $ cat /root/keystonerc_admin
+[root@machine] # cat /root/keystonerc_admin
 ```
 Questo ci mostra i dati di configurazione dell'utente admin, da cui potremo ottenere la sua password e loggarci alla pagina http://localhost dove ci verrà esposto Openstack; qui accederemo quindi con il nome utente admin e la password trovata al passo precedente; più avanti nella parte 3 di questo documento verrà mostrato come utilizzare direttamente questo file per accedere via riga di comando ad Openstack.
 
