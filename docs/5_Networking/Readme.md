@@ -1,5 +1,12 @@
 # Networking
 
+---
+**ATTENZIONE**
+
+Per una soluzione grafica fate riferimento al corso CL010 che potete trovare qui: https://www.cl010.it
+
+---
+
 ## Le reti Software Defined
 
 Il servizio networking di Openstack fornisce un sistema scalabile per la gestione della connettività di rete all'interno di un'implementazione cloud OpenStack. Può reagire facilmente e rapidamente alle mutevoli esigenze della rete (ad esempio, creando e assegnando nuovi indirizzi IP). 

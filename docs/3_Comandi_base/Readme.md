@@ -6,6 +6,10 @@
 Per una soluzione grafica fate riferimento al corso CL010 che potete trovare qui: https://www.cl010.it
 
 ---
+#### Convenzioni
+
+Le convenzioni utilizzate saranno i nomi in minuscolo per gli utenti, quelli in maiuscolo indicheranno i progetti, le VM create termineranno in _VM.
+
 ## Parte 0: Dati amministratore
 I dati di accesso alla nostra istanza Openstack potranno essere trovati nel file keystonerc_admin, che si trova in maniera conveniente nella home path del nostro utente sulla macchina in cui ci troviamo.
 
@@ -16,9 +20,7 @@ Per loggarci come utente admin su Openstack andiamo a utilizzare il comando **so
 ```
 Come si può osservare qui sopra una delle env variables che vengono caricate modificano anche la variabile PS1 che, di conseguenza, modifica l'estetica della nostra shell per mostrarci quale utente abbiamo caricato in memoria e su quale progetto stiamo lavorando al momento attuale.
 
-Facendo il **cat** di questo file ci vengono mostrati i dati di configurazione dell'utente admin, da cui potremo ottenere la sua password e loggarci alla pagina http://localhost dove ci verrà esposto l'interfaccia web di Openstack.
-
-Le convenzioni utilizzate saranno i nomi in minuscolo per gli utenti, quelli in maiuscolo indicheranno i progetti, le VM create termineranno in _VM.
+Facendo il **cat** del file keystonerc ci vengono mostrati i dati di configurazione dell'utente admin, da cui potremo ottenere la sua password nel caso volessimo accedere all'interfaccia web di openstack, reperibile localmente alla pagina http://localhost .
 
 ## Parte 1: Creazione utente e progetto da assegnargli
 ### Esercizio
@@ -112,11 +114,11 @@ Inoltre necessitiamo di avere una rete pronta, che potremo creare così:
 
 Una volta osservato tutte le opzioni decidiamo di creare una macchina come quella precedente
 ```console
-[user@machine - (cl010u cl010)] $ openstack server create --image cirros --flavour m1.tiny --network intNetcl010 cl010_VM2
+[user@machine - (cl010u cl010)] $ openstack server create --image fedoracloud --flavour m1.tiny --network intNetcl010 cl010_VM1
 ```
-Questo comando creerà una macchina chiamata cl010_VM2 sul network creato precedentemente (vedasi parte 2 di questo documento), con la stessa immagine battezzata cirros e con m1.tiny come flavour.
+Questo comando creerà una macchina chiamata cl010_VM1 sul network creato precedentemente (vedasi parte 2 di questo documento), con l'immagine di fedora cloud e con m1.tiny come flavour.
 
-Fatto questo ci verrà ritornata una tabella con i parametri della VM appena creata e,attendendo qualche secondo, diamo nuovamente il comando **openstack server list** per verificare che la creazione sia andata a buon fine: se tutto è ok la VM2 dovrebbe avere lo status ACTIVE.
+Fatto questo ci verrà ritornata una tabella con i parametri della VM appena creata e,attendendo qualche secondo, diamo nuovamente il comando **openstack server list** per verificare che la creazione sia andata a buon fine: se tutto è ok la VM1 dovrebbe avere lo status ACTIVE.
 
 Per verificare il corretto funzionamento delle macchine basterà andare sul pannello di controllo nella sezione delle istanze e aprire la tendina della colonna action della VM che ci interessa; qui tra i vari comandi troveremo console che ci attaccherà direttamente alla console della nostra macchina dove in questo caso ci verrano forniti a login i dati d'accesso in quanto cirrOS ha questa feature per facilitare il testing delle VM; questa feature è estremamente insicura per un ambiente di produzione e consigliamo l'uso del sistema cirrOS esclusivamente in ambito di testing.
 
