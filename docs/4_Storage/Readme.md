@@ -60,7 +60,7 @@ Una volta agganciato il volume e dopo aver creato il filesystem, è possibile mo
 E' possibile effetture il detach del volume, prima assicuratevi di aver smontato il disco dal mountpoint precedentemente creato:
 
 ```console
-[user@machine - (cl010u cl010)] $ openstack server remove volume volume id_ volume id_istanza
+[user@machine - (cl010u cl010)] $ openstack server remove volume  id_volume id_istanza
 ```
 A questo punto il volume è stato smontato dall'istanza ma è ancora presente su Cinder, non ci resta che proseguire con l'eliminazione.
 
