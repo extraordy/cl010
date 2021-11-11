@@ -139,13 +139,13 @@ Creiamo ora una macchina, vengono mostrati i comandi per creare sia una macchina
 [user@machine - (cl010u cl010)] $ openstack server create --image fedoracloud --flavor m1.small \
 > --network intNetcl010 --key-name <nome file chiave SSH> cl010_VM1
 ```
-Con flavor intendiamo la dimensione standard che vogliamo dare alla nostra macchina, in termini di quante vCPU, Memoria e RAM vogliamo assegnarle; potete trovare maggiorni informazioni sul sito di Openstack.
+> Con flavor intendiamo la dimensione standard che vogliamo dare alla nostra macchina, in termini di quante vCPU, spazio di archiviazione e RAM vogliamo assegnarle; potete trovare maggiorni informazioni sul sito di Openstack.
 
 Fatto questo ci verrà ritornata una tabella con i parametri della VM appena creata e,attendendo qualche secondo, diamo nuovamente il comando **openstack server list** per verificare che la creazione sia andata a buon fine: se tutto è ok la VM dovrebbe avere lo status ACTIVE.
 
-Per verificare il corretto funzionamento delle macchine basterà fare SSH nella macchina (il nome utente può essere reperito alla pagina di dowload delle immagini, nel caso di fedora cloud è fedora mentre per cirros vi verranno fornite nella shell di login) o andare sul pannello di controllo nella sezione delle istanze e aprire la tendina della colonna action della VM che ci interessa; per farlo però dobbiamo impostare le chiavi SSH in quanto molte distribuzioni cloud disabilitano di base l'accesso via password.
+Per verificare il corretto funzionamento delle macchine basterà fare SSH nella macchina (il nome utente può essere reperito alla pagina di dowload delle immagini, nel caso di fedora cloud è fedora mentre per cirros il nome utente è cirros) o andare sul pannello di controllo nella sezione delle istanze e aprire la tendina della colonna action della VM che ci interessa (cirros ha dati d'accesso standard reperibili sul sito);molte distribuzioni cloud invece disabilitano di base l'accesso via password, tra cui fedora.
 
-Per connetterci via SSH necessitiamo dei concetti di networking che vedremo più avanti, per intanto possiamo controllare il corretto boot della macchina tramite i log:
+Per connetterci via SSH necessitiamo però dei concetti di networking che vedremo più avanti, per intanto possiamo controllare il corretto boot della macchina tramite i log:
 ```console
 [user@machine - (cl010u cl010)] $ openstack console log show cl010_VM0
 ```
