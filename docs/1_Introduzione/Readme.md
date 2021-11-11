@@ -23,12 +23,20 @@ Ad oggi molte aziende supportano attivamente Openstack, ricordiamo qui alcuni me
 
 ## Quali sono i componenti di Openstack?
 Openstack è composto da vari moduli, che si occupano di gestire tutti i compiti del sistema: Openstack infatti è un wrapper python il cui compito originario era coordinare tutte queste tecnologie in un'unica soluzione più comoda da utilizzare; è comunque rimasta la possibilità di usare i singoli componenti.
+Qui di sotto verranno introdotti alcuni dei più famosi
 - **Nova**
     Nova è la parte del progetto Openstack che fornisce il modo di lanciare istanze (ossia i nostri server virtuali), utilizzando tutti gli altri tool per compiere le varie operazioni necessarie.
 - **Cinder**:
+    Cinder è uno dei componenti di Openstack che si occupa della gestione di storage, in modo particolare di block storage, che fornisce all'utente finale una semplice API per richiedere e consumare spazio di memoria senza la diretta conoscenza da parte dell'utente di tutti i dettagli sottostanti.
+- **Neutron** :
+    Neutron è il componente che fornisce funzionalità di SDN (Software Defined Network), ossia permette di creare reti software facilmente gestibili dall'utente amministratore nascondendo sotto di sè tutta la complessità della reindirizzazione dei pacchetti e della gestione dinamica di reti in un ambiente che cambia dinamicamente come quello di Openstack.
 - **Keystone**:
     Keystone è il componente responsabile per la scoperta dei servizi Openstack, fornisce le API per la client authentication e le distributed multi-tenanti authorization.
     Si occupa inoltre di fornire il servizio Resource, che si occupa di fornire dati su progetti e domini.
+- **Glance** :
+    Glance è il componente che svolge il compito di Image Registry, ossia cataloga, eroga e gestisce le immagini che andremo ad utilizzare nel nostro sistema; la sua potenza deriva anche dal fatto che è possibile utilizzarlo per fare query sui metadati delle immagini e non solo sulle immagini stesse, garantendo così un'ancora più ampia flessibilità.
+
+[Se siete interessati qui potrete trovare tutti gli altri componenti.](https://www.openstack.org/software/project-navigator/openstack-components#openstack-services)
 
 [Passiamo ora alla parte di installazione della VM e di setup di Openstack in ambiente virtualizzato](../2_Installazione/Readme.md)
 
