@@ -1,6 +1,6 @@
 # Processo d'installazione di un ambiente di laboratorio
 ### Requirement
-I requirement minimi per l'installazione sono una macchina con CPU capace di virtualizzazione, consigliamo 16GB di RAM (possibilmente dedicata, almeno installati) e almeno una scheda di rete; inoltre si consiglia di avere almeno 20GB di spazio disponibile su disco per avere abbastanza spazio di manovra per creare qualche istanza e qualche volume.
+I requirement minimi per l'installazione sono una macchina con CPU capace di virtualizzazione, consigliamo 16GB di RAM (possibilmente dedicata, almeno installati) e almeno una scheda di rete; inoltre si consiglia di avere almeno 30GB di spazio disponibile su disco per avere abbastanza spazio di manovra per creare qualche istanza e qualche volume.
 
 ### Creazione della VM
 Per avere un ambiente di testing facilmente resettabile e riutilizzabile, installeremo il nostro laboratorio di test all'interno di una virtual machine (è estremamente sconsigliato farlo direttamente sul proprio sistema).

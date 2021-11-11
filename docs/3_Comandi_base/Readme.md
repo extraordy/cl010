@@ -130,7 +130,7 @@ Inoltre necessitiamo di avere una rete pronta, che potremo creare così, anche c
 [user@machine - (cl010u cl010)] $ openstack subnet create --network intnet_cl010 --dhcp \
 > --subnet-range 192.168.2.0/24 intnet_subnet_cl010
 ```
-Creiamo ora una macchina, vengono mostrati i comandi per creare sia una fedora cloud sia una macchina con cirros (che è l'opzione consigliata in quanto richiede meno risorse e meno configurazioni):
+Creiamo ora una macchina, vengono mostrati i comandi per creare sia una macchina con cirros (che è l'opzione consigliata in quanto richiede meno risorse e meno configurazioni) sia una fedora cloud (in questo caso la virtual machine deve avere più di 20GB di spazio disponibile in quanto il flavor scelto richiede 20GB di spazio minimo):
 ```console
 [user@machine - (cl010u cl010)] $ openstack server create --image cirros --flavor m1.tiny \
 > --network intNetcl010 --key-name <nome chiave> cl010_VM0
@@ -140,15 +140,14 @@ Creiamo ora una macchina, vengono mostrati i comandi per creare sia una fedora c
 > --network intNetcl010 --key-name <nome chiave> cl010_VM1
 ```
 
-Ad esempio il secondo comando creerà una macchina chiamata cl010_VM1 sul network creato precedentemente (vedasi parte 2 di questo documento), con l'immagine di fedora cloud e con m1.small come flavor.
 
-Fatto questo ci verrà ritornata una tabella con i parametri della VM appena creata e,attendendo qualche secondo, diamo nuovamente il comando **openstack server list** per verificare che la creazione sia andata a buon fine: se tutto è ok la VM1 dovrebbe avere lo status ACTIVE.
+Fatto questo ci verrà ritornata una tabella con i parametri della VM appena creata e,attendendo qualche secondo, diamo nuovamente il comando **openstack server list** per verificare che la creazione sia andata a buon fine: se tutto è ok la VM dovrebbe avere lo status ACTIVE.
 
 Per verificare il corretto funzionamento delle macchine basterà fare SSH nella macchina (il nome utente può essere reperito alla pagina di dowload delle immagini, nel caso di fedora cloud è fedora mentre per cirros vi verranno fornite nella shell di login) o andare sul pannello di controllo nella sezione delle istanze e aprire la tendina della colonna action della VM che ci interessa; per farlo però dobbiamo impostare le chiavi SSH in quanto molte distribuzioni cloud disabilitano di base l'accesso via password.
 
 Per connetterci via SSH necessitiamo dei concetti di networking che vedremo più avanti, per intanto possiamo controllare il corretto boot della macchina tramite i log:
 ```console
-[user@machine - (cl010u cl010)] $ openstack console log show cl010_VM1
+[user@machine - (cl010u cl010)] $ openstack console log show cl010_VM0
 ```
 
 
