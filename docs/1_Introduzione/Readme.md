@@ -30,4 +30,6 @@ Openstack è composto da vari moduli, che si occupano di gestire tutti i compiti
     Keystone è il componente responsabile per la scoperta dei servizi Openstack, fornisce le API per la client authentication e le distributed multi-tenanti authorization.
     Si occupa inoltre di fornire il servizio Resource, che si occupa di fornire dati su progetti e domini.
 
+[Passiamo ora alla parte di installazione della VM e di setup di Openstack in ambiente virtualizzato](../2_Installazione/Readme.md)
+
 

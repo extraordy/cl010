@@ -79,3 +79,5 @@ E' possibile infine rimuovere il volume che abbiamo creato all'inizio con il com
 ```console
 [user@machine - (cl010u cl010)] $ openstack volume delete my-new-volume
 ```
+
+[Infine andiamo alla parte finale sul networking](../5_Networking/Readme.md)

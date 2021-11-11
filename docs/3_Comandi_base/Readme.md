@@ -108,17 +108,17 @@ Una volta dato il comando ci verrà fornita in output la tabella con i valori ch
 #### Creare un'istanza da riga di comando
 Possiamo dare un'occhiata a tutti i comandi che possiamo usare su Openstack tramite il comando help, come mostrato nel blocco qui sotto; questo comando verrà dato in pasto ad un paginatore (less) che ci permette di visualizzare con facilità le informazioni ritornateci: 
 ```console
-[user@machine - (cl010u cl010)] $ openstack help server create | less
+[user@machine - (cl010a cl010)] $ openstack help server create | less
 
 ```
-Inoltre necessitiamo di avere una rete pronta, che potremo creare così (oppure si possono usare le reti private e public create quando viene installato openstack):
+Inoltre necessitiamo di avere una rete pronta, che potremo creare così (passando all'utente cl010a tramite il **source** del suo keystonerc) :
 
 ```console
-[user@machine - (cl010u cl010)] $ openstack network create intNetcl010
+[user@machine - (cl010a cl010)] $ openstack network create intNetcl010
+[user@machine - (cl010a cl010)] $ openstack subnet create --network intnet_cl010 --dhcp --subnet-range 192.168.2.0/24 intnet_subnet_cl010
 ```
 
-
-Una volta osservato tutte le opzioni decidiamo di creare una macchina come quella precedente
+Una volta osservato tutte le opzioni decidiamo di creare una macchina come quella precedente; torniamo user facendo il source del keystone corretto e poi diamo i seguenti comandi:
 ```console
 [user@machine - (cl010u cl010)] $ openstack server create --image fedoracloud --flavour m1.tiny --network intNetcl010 cl010_VM1
 ```
@@ -143,3 +143,5 @@ Da command line invece posso fare la stessa operazione con il comando (NB: è un
 > --public-key <nome da dare alla chiave pubblica>
 ```
 Questo comando salverà nella path in cui siamo la chiave pubblica e quella privata, oltre a caricare direttamente la pubblica in Openstack.
+
+[continuiamo ora con la parte 4: storage](../4_Storage/Readme.md)
