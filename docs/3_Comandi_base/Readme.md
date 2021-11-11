@@ -1,21 +1,21 @@
 # Introduzione a Openstack
 
----
-**ATTENZIONE**
+> **ATTENZIONE** <br>
+> Per una soluzione grafica fate riferimento al corso CL010 che potete trovare qui: https://www.cl010.it <br>
+> Inoltre per favorire la leggibilità non tutti gli output a schermo verranno mostrati.
 
-Per una soluzione grafica fate riferimento al corso CL010 che potete trovare qui: https://www.cl010.it
-Inoltre per favorire la leggibilità non tutti gli output a schermo verranno mostrati.
 ---
+
 #### Convenzioni
 
 Le convenzioni utilizzate saranno i nomi in minuscolo per gli utenti, quelli in maiuscolo indicheranno i progetti, le VM create termineranno in _VM.
 
 ## Parte 0: Dati amministratore
-I dati di accesso alla nostra istanza Openstack potranno essere trovati nel file keystonerc_admin, i quali contengono delle env variables
+I dati di accesso alla nostra istanza Openstack potranno essere trovati nel file keystonerc_admin, i quali contengono delle env variables che identificano l'utente che vogliamo utilizzare e a quale progetto vogliamo connetterci; sono estremamente comodi perché ci permettono di swappare tra loro con estrema facilità e velocità <br>
 I files keystonerc vengono generati in /root/ sulla macchina in cui ci troviamo, per maggiore comodità si consiglia di copiarle nella path del nostro end user e di assegnargliele per fare in modo che possano essere utilizzate:
 ```console
-[user@machine] $ sudo cp /root/keystonerc_* .
-[user@machine] $ sudo chown user keystonerc_*
+[user@machine] $ sudo cp /root/keystonerc_admin .
+[user@machine] $ sudo chown user keystonerc_admin
 ```
 
 Per loggarci come utente admin su Openstack andiamo a utilizzare il comando **source** per caricare le variabili contenute nel file keystonerc:
@@ -97,7 +97,6 @@ Ora vediamo le macchine virtuali create con il comando qui sotto mostrato, che c
 ```console
 [user@machine - (cl010u cl010)] $ openstack server list
 ```
-Come potrete vedere, vi verrà ritornata la macchina creata nell'esercizio precedente, cl010_VM1.
 #### caricare un ISO su Openstack
 Per questo esercizio ho precedentemente scaricato un'immagine della distribuzione fedora creata appositamente per il cloud, che ora andremo a caricare su Openstack come visto in precedenza:
 ```console
