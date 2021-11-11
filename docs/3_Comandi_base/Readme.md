@@ -133,11 +133,11 @@ Inoltre necessitiamo di avere una rete pronta, che potremo creare così, anche c
 Creiamo ora una macchina, vengono mostrati i comandi per creare sia una macchina con cirros (che è l'opzione consigliata in quanto richiede meno risorse e meno configurazioni) sia una fedora cloud (in questo caso la virtual machine deve avere più di 20GB di spazio disponibile in quanto il flavor scelto richiede 20GB di spazio minimo):
 ```console
 [user@machine - (cl010u cl010)] $ openstack server create --image cirros --flavor m1.tiny \
-> --network intNetcl010 --key-name <nome chiave> cl010_VM0
+> --network intNetcl010 --key-name <nome file chiave SSH> cl010_VM0
 ```
 ```console
 [user@machine - (cl010u cl010)] $ openstack server create --image fedoracloud --flavor m1.small \
-> --network intNetcl010 --key-name <nome chiave> cl010_VM1
+> --network intNetcl010 --key-name <nome file chiave SSH> cl010_VM1
 ```
 Con flavor intendiamo la dimensione standard che vogliamo dare alla nostra macchina, in termini di quante vCPU, Memoria e RAM vogliamo assegnarle; potete trovare maggiorni informazioni sul sito di Openstack.
 
