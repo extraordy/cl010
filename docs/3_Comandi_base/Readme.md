@@ -77,9 +77,22 @@ Prima di tutto dobbiamo caricare un sistema operativo funzionante all'interno de
 [user@machine - (cl010u cl010)] $ openstack image create --file cirros.qcow2 --disk-format qcow2 cirros
 ```
 
-Ora possiamo lanciare la nostra istanza:
+Ora possiamo lanciare la nostra istanza ma prima aggiungiamo le chiavi SSH:
 
-## Parte 3: Creazione di un'istanza da riga di comando
+## Parte 3: Generazione di chiavi SSH
+### Esercizio
+**Creiamo o carichiamo delle chiavi SSH nella nostra istanza di Openstack**
+### Soluzione
+
+Da command line invece posso fare la stessa operazione con il comando (NB: è un comando unico, l'escape serve solo ad indicare che stiamo andando a capo, stessa cosa per il maggiore sulla seconda riga, non devono essere riportati e dovete dare il comando senza andare a capo).
+```console
+[user@machine - (cl010u cl010)] $ openstack keypair create --private-key <nome da dare al file che contiene la private key> \
+> --public-key <nome da dare alla chiave pubblica>
+```
+Questo comando salverà nella path in cui siamo la chiave pubblica e quella privata, oltre a caricare direttamente la pubblica in Openstack.
+
+
+## Parte 4: Creazione di un'istanza da riga di comando
 ### Esercizio
 - **Accedere via command line a Openstack, utilizzando i file keystonerc** <br>
 - **Caricare un ISO che nono sia cirros su Openstack** <br>
@@ -110,37 +123,30 @@ Possiamo dare un'occhiata a tutti i comandi che possiamo usare su Openstack tram
 [user@machine - (cl010a cl010)] $ openstack help server create | less
 
 ```
-Inoltre necessitiamo di avere una rete pronta, che potremo creare così (passando all'utente cl010a tramite il **source** del suo keystonerc) :
+Inoltre necessitiamo di avere una rete pronta, che potremo creare così, anche con l'utente cl010u che ha i privilegi più bassi in Openstack:
 
 ```console
-[user@machine - (cl010a cl010)] $ openstack network create intNetcl010
-[user@machine - (cl010a cl010)] $ openstack subnet create --network intnet_cl010 --dhcp --subnet-range 192.168.2.0/24 intnet_subnet_cl010
+[user@machine - (cl010u cl010)] $ openstack network create intNetcl010
+[user@machine - (cl010u cl010)] $ openstack subnet create --network intnet_cl010 --dhcp \
+> --subnet-range 192.168.2.0/24 intnet_subnet_cl010
 ```
 
-Una volta osservato tutte le opzioni decidiamo di creare una macchina come quella precedente; torniamo user facendo il source del keystone corretto e poi diamo i seguenti comandi:
+Una volta osservato tutte le opzioni decidiamo di creare una macchina come quella precedente:
 ```console
-[user@machine - (cl010u cl010)] $ openstack server create --image fedoracloud --flavour m1.tiny --network intNetcl010 cl010_VM1
+[user@machine - (cl010u cl010)] $ openstack server create --image fedoracloud --flavor m1.tiny \
+> --network intNetcl010 --key-name <nome chiave> cl010_VM1
 ```
-Questo comando creerà una macchina chiamata cl010_VM1 sul network creato precedentemente (vedasi parte 2 di questo documento), con l'immagine di fedora cloud e con m1.tiny come flavour.
+Questo comando creerà una macchina chiamata cl010_VM1 sul network creato precedentemente (vedasi parte 2 di questo documento), con l'immagine di fedora cloud e con m1.tiny come flavor.
 
 Fatto questo ci verrà ritornata una tabella con i parametri della VM appena creata e,attendendo qualche secondo, diamo nuovamente il comando **openstack server list** per verificare che la creazione sia andata a buon fine: se tutto è ok la VM1 dovrebbe avere lo status ACTIVE.
 
-Per verificare il corretto funzionamento delle macchine basterà andare sul pannello di controllo nella sezione delle istanze e aprire la tendina della colonna action della VM che ci interessa; qui tra i vari comandi troveremo console che ci attaccherà direttamente alla console della nostra macchina dove in questo caso ci verrano forniti a login i dati d'accesso in quanto cirrOS ha questa feature per facilitare il testing delle VM; questa feature è estremamente insicura per un ambiente di produzione e consigliamo l'uso del sistema cirrOS esclusivamente in ambito di testing.
+Per verificare il corretto funzionamento delle macchine basterà fare SSH nella macchina (il nome utente è fedora) o andare sul pannello di controllo nella sezione delle istanze e aprire la tendina della colonna action della VM che ci interessa; per farlo però dobbiamo impostare le chiavi SSH in quanto molte distribuzioni cloud disabilitano di base l'accesso via password.
 
-## Parte 4: Generazione di chiavi SSH
-### Esercizio
-**Creiamo o carichiamo delle chiavi SSH nella nostra istanza di Openstack**
-### Soluzione
-Andando nella tab
-
-> project &#8594; compute &#8594; key pairs
-
-Si possono caricare (ovviamente la parte pubblica) o creare (verrà fatta scaricare la parte privata della chiave mentre la pubblica verrà direttamente caricata) chiavi SSH per poter accedere all'istanza in modo passwordless. 
-Da command line invece posso fare la stessa operazione con il comando (NB: è un comando unico, l'escape serve solo ad indicare che stiamo andando a capo, stessa cosa per il maggiore sulla seconda riga, non devono essere riportati e dovete dare il comando senza andare a capo).
+Per connetterci via SSH necessitiamo dei concetti di networking che vedremo più avanti, per intanto possiamo controllare il corretto boot della macchina tramite i log:
 ```console
-[user@machine - (cl010u cl010)] $ openstack keypair create --private-key <nome da dare alla private key> \
-> --public-key <nome da dare alla chiave pubblica>
+[user@machine - (cl010u cl010)] $ openstack console log show cl010_VM1
 ```
-Questo comando salverà nella path in cui siamo la chiave pubblica e quella privata, oltre a caricare direttamente la pubblica in Openstack.
+
+
 
 [continuiamo ora con la parte 4: storage](../4_Storage/Readme.md)

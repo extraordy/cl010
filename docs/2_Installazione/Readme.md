@@ -18,7 +18,7 @@ kvm_amd               118784  0
 kvm                   835584  1 kvm_amd
 ccp                   102400  1 kvm_amd
 ```
-Una volta che ci siamo assicurati che la nostra macchina supporti la virtualizzazione e installati i pacchetti di libvirt, QEMU e gli altri di supporto, scaricheremo un'appropriata ISO da utilizzare: noi di EXTRAORDY consigliamo di provare una macchina con Centos (come verrà mostrato qui in seguito) oppure con RHEL 8.4 (Richiederà una licenza aziendale o, se state testando in proprio e per fini non commerciali, [potete ottenere qui una licenza developer](https://developers.redhat.com/products/rhel/download) ) o con fedora, a seconda delle preferenze di ognuno.
+Una volta che ci siamo assicurati che la nostra macchina supporti la virtualizzazione e installati i pacchetti di libvirt, QEMU e gli altri di supporto, scaricheremo un'appropriata ISO da utilizzare: noi di EXTRAORDY consigliamo di provare una macchina con CentOS Linux 8 (come verrà mostrato qui in seguito) oppure con RHEL 8.4 (Richiederà una licenza aziendale o, se state testando in proprio e per fini non commerciali, [potete ottenere qui una licenza developer](https://developers.redhat.com/products/rhel/download) ) o con fedora, a seconda delle preferenze di ognuno.
 
 Infine andremo a dare i seguenti comandi per creare ed avviare una macchina virtuale:
 ```console
@@ -49,7 +49,7 @@ Id      Name            State
 ## Installazione del laboratorio di testing Openstack all-in-one
 
 > ATTENZIONE!
-> Questi sono i comandi per una macchina centos 8 ( **NON Centos stream** ), per ogni altra versione che volete utilizzare [qui potete trovare i comandi per tutte le altre distribuzioni supportate](https://www.rdoproject.org/install/packstack/)
+> Questi sono i comandi per una macchina CentOS Linux 8 ( **NON Centos stream** ), per ogni altra versione che volete utilizzare [qui potete trovare i comandi per tutte le altre distribuzioni supportate](https://www.rdoproject.org/install/packstack/)
 
 All'interno della nostra macchina di test possiamo dare i seguenti comandi, che ci forniranno l'ambiente di testing; per comodità andremo a disabilitare SELinux e firewalld per maggiore facilità d'utilizzo e cambieremo network manager da NetworkManager a network.
 ```console
@@ -225,27 +225,6 @@ dopo l'installazione l'ip del server e' stato associato a br-ex e non piu' a enp
     link/ether c6:a5:de:3f:d5:1e brd ff:ff:ff:ff:ff:ff
 ```
 
-Nel virtual switch br-ex confluisce l'interfaccia fisica del server
-```console
-[user@machine] $ ovs-vsctl show
-6bd471a5-22c7-4c37-86a8-c424023c58f9
-    Manager "ptcp:6640:127.0.0.1"
-        is_connected: true
-    Bridge br-ex
-        fail_mode: standalone
-        Port br-ex
-            Interface br-ex
-                type: internal
-        Port enp1s0
-            Interface enp1s0
-    Bridge br-int
-        fail_mode: secure
-        datapath_type: system
-        Port br-int
-            Interface br-int
-                type: internal
-    ovs_version: "2.13.6"
-```
 
 #### abilitazione della funzionalita' di bash completion
 Nel caso vogliate abilitare l'autocompletamento potete farlo con il seguente comando:
@@ -260,7 +239,8 @@ Accediamo ora utilizzando il file keystonerc_admin, del quale verrà data una sp
 ```console
 [user@machine] $ su 
 [root@machine] # source /root/keystonerc_admin
-[root@machine ~(keystone_admin)] # openstack network create --external --share --provider-network-type flat --provider-physical-network extnet extnet_cl010
+[root@machine ~(keystone_admin)] # openstack network create --external \
+> --share --provider-network-type flat --provider-physical-network extnet extnet_cl010
 +---------------------------+--------------------------------------+
 | Field                     | Value                                |
 +---------------------------+--------------------------------------+
@@ -295,7 +275,9 @@ Accediamo ora utilizzando il file keystonerc_admin, del quale verrà data una sp
 ```
 creiamo inoltre una subnet nell'external network
 ```console
-[root@rdo8 ~(keystone_admin)]# openstack subnet create --network extnet_cl010 --no-dhcp --subnet-range 172.19.0.0/24  --allocation-pool start=172.19.0.248,end=172.19.0.252 --dns-nameserver 172.25.0.31 --dns-nameserver 8.8.8.8 extnet_subnet_cl010
+[root@rdo8 ~(keystone_admin)]# openstack subnet create --network extnet_cl010 --no-dhcp \
+>  --subnet-range 172.19.0.0/24  --allocation-pool start=172.19.0.248,end=172.19.0.252 \
+>  --dns-nameserver 172.25.0.31 --dns-nameserver 8.8.8.8 extnet_subnet_cl010
 +----------------------+--------------------------------------+
 | Field                | Value                                |
 +----------------------+--------------------------------------+
