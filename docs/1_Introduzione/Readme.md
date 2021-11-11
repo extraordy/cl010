@@ -23,8 +23,11 @@ Ad oggi molte aziende supportano attivamente Openstack, ricordiamo qui alcuni me
 
 ## Quali sono i componenti di Openstack?
 Openstack è composto da vari moduli, che si occupano di gestire tutti i compiti del sistema: Openstack infatti è un wrapper python il cui compito originario era coordinare tutte queste tecnologie in un'unica soluzione più comoda da utilizzare; è comunque rimasta la possibilità di usare i singoli componenti.
-- Nova:
-- Cinder:
-- Ceph: 
+- **Nova**
+    Nova è la parte del progetto Openstack che fornisce il modo di lanciare istanze (ossia i nostri server virtuali), utilizzando tutti gli altri tool per compiere le varie operazioni necessarie.
+- **Cinder**:
+- **Keystone**:
+    Keystone è il componente responsabile per la scoperta dei servizi Openstack, fornisce le API per la client authentication e le distributed multi-tenanti authorization.
+    Si occupa inoltre di fornire il servizio Resource, che si occupa di fornire dati su progetti e domini.
 
 

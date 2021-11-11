@@ -10,7 +10,7 @@ Questo repository è relativo al riassunto di quanto trattato alla Technical Ove
 
 La documentazione è possibile trovarla sotto `docs/`, qui sotto l'indice degli argomenti:
 
-- [1 - Introduzione e deployment](docs/1_Introduzione/Readme.md)
+- [1 - Introduzione](docs/1_Introduzione/Readme.md)
 - [2 - Installazione](docs/2_Installazione/Readme.md)
 - [3 - Comandi base](docs/3_Comandi_base/Readme.md)
 - [4 - Management dello storage via cinder](docs/4_Storage/Readme.md)

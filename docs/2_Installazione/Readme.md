@@ -18,11 +18,11 @@ kvm_amd               118784  0
 kvm                   835584  1 kvm_amd
 ccp                   102400  1 kvm_amd
 ```
-Una volta che ci siamo assicurati che la nostra macchina supporti la virtualizzazione e installati il pacchetto di QEMU, scaricheremo un'appropriata ISO da utilizzare: noi di EXTRAORDY consigliamo di provare una macchina con RHEL 8.5 (Richiederà una licenza aziendale o, se state testando in proprio e per fini non commerciali, [potete ottenere qui una licenza developer](https://developers.redhat.com/products/rhel/download) ) o con una derivata di RHEL, come centos o fedora, a seconda delle preferenze di ognuno.
+Una volta che ci siamo assicurati che la nostra macchina supporti la virtualizzazione e installati il pacchetto di QEMU, scaricheremo un'appropriata ISO da utilizzare: noi di EXTRAORDY consigliamo di provare una macchina con RHEL 8.4 (Richiederà una licenza aziendale o, se state testando in proprio e per fini non commerciali, [potete ottenere qui una licenza developer](https://developers.redhat.com/products/rhel/download) ) o con una derivata di RHEL, come centos o fedora, a seconda delle preferenze di ognuno.
 
 Infine andremo a dare i seguenti comandi per creare ed avviare una macchina virtuale:
 ```console
-[user@machine] $ sudo virt-install --virt-type=kvm --name=rhelVM --ram 4096 --vcpus 2 --os-variant=rhel8.5 --cdrom=$HOME/Downloads/rhel8-5.iso \
+[user@machine] $ virt-install --virt-type=kvm --name=rhelVM --ram 4096 --vcpus 2 --os-variant=rhel8.5 --cdrom=$HOME/Downloads/rhel8-5.iso \
 --network=default --graphics vnc --disk size=20 
 ```
 Con ovviamente cdrom la path per la iso sul vostro sistema e disk size di almeno 20GB.
@@ -31,7 +31,7 @@ Una volta fatto questo vi verrà aperto un prompt che vi farà connettere alla v
 
 Se vorrete riaprire più avanti questa macchina potrete utilizzare virsh con i seguenti comandi rispettivamente per visualizzare tutte le macchine installate via QEMU e per avviare la macchina.
 ```console
-[user@machine] $ sudo virsh list --all
+[user@machine] $ virsh list --all
 Id      Name            State
 -------------------------------
 1       rhelVM        shut off
@@ -39,12 +39,12 @@ Id      Name            State
 ```
 Infine per spegnere il nostro laboratorio basterà dare:
 ```console
-[user@machine] $ sudo virsh list
+[user@machine] $ virsh list
 Id      Name            State
 -------------------------------
 1       rhelVM        running
 
-[user@machine] $ sudo virsh stop rhelVM
+[user@machine] $ virsh shutdown rhelVM
 ```
 ### Installazione del laboratorio di testing Openstack all-in-one
 Il nostro ambiente di environment verrà installato tramite [RDO](https://www.rdoproject.org/install/packstack/), un repository che contiene al suo interno Packstack.
@@ -60,3 +60,5 @@ Per una RHEL 8 i comandi sono i seguenti:
 ```
 
 Nel caso voleste utilizzare un diverso sistema operativo o una versione meno recente di RHEL potete andare [sul sito di RDO](https://www.rdoproject.org/install/packstack/) dove troverete tutte le relative informazioni.
+
+Il processo di installazione è lungo e deve necessariamente effettuare alcuni controlli, pertanto se vedete che la vostra macchina è bloccata nel controllare alcune impostazioni di puppet attendete, è normale.

@@ -11,7 +11,12 @@ Per una soluzione grafica fate riferimento al corso CL010 che potete trovare qui
 Le convenzioni utilizzate saranno i nomi in minuscolo per gli utenti, quelli in maiuscolo indicheranno i progetti, le VM create termineranno in _VM.
 
 ## Parte 0: Dati amministratore
-I dati di accesso alla nostra istanza Openstack potranno essere trovati nel file keystonerc_admin, che si trova in maniera conveniente nella home path del nostro utente sulla macchina in cui ci troviamo.
+I dati di accesso alla nostra istanza Openstack potranno essere trovati nel file keystonerc_admin, i quali contengono delle env variables
+I files keystonerc vengono generati in /root/ sulla macchina in cui ci troviamo, per maggiore comodità si consiglia di copiarle nella path del nostro end user e di assegnargliele per fare in modo che possano essere utilizzate:
+```console
+[user@machine] $ sudo cp /root/keystonerc_* .
+[user@machine] $ sudo chown user keystonerc_*
+```
 
 Per loggarci come utente admin su Openstack andiamo a utilizzare il comando **source** per caricare le variabili contenute nel file keystonerc:
 ```console
@@ -24,7 +29,7 @@ Facendo il **cat** del file keystonerc ci vengono mostrati i dati di configurazi
 
 ## Parte 1: Creazione utente e progetto da assegnargli
 ### Esercizio
-**Creiamo un utente chiamato cl010u (User), cl010a (administrator del progetto) e assegnamoli ad un progetto CL010p**
+**Creiamo un utente chiamato cl010u (User), cl010a (administrator del progetto), assegnamoli ad un progetto CL010p e creiamo i corrispondenti files keystonerc**
 
 ### Soluzione
 Possiamo listare tutti gli utenti dalla CLI con il comando
@@ -60,6 +65,7 @@ All'utente **CL010u** abbiamo assegnato il ruolo di \_\_member\_\_ che è il ruo
 
 Una volta fatto questo ripetiamo il processo anche per un secondo utente, al quale però assegneremo il ruolo di admin del progetto, in modo da non dover utilizzare sempre l'amministratore di Openstack e iniziare quindi a capire le limitazioni assegnate ai vari utenti.
 
+Andiamo ora a creare i files keystonerc per entrambi gli user a partire da quelli che già abbiamo:
 
 ## Parte 2: Caricamento di un sistema operativo
 ### Esercizio
@@ -68,7 +74,7 @@ Una volta fatto questo ripetiamo il processo anche per un secondo utente, al qua
 Prima di tutto dobbiamo caricare un sistema operativo funzionante all'interno del nostro sistema e qui andremo a caricare un'immagine molto particolare chiamata CirrOS, un sistema operativo Linux completo ma minimale, utile per testare il funzionamento di un sistema operativo in cloud; può essere reperito [qui](http://download.cirros-cloud.net/):
 
 ```console
-[user@machine - (cl010u cl010)] $ openstack image create --file cirros.qcow2 --format qcow2 cirros
+[user@machine - (cl010u cl010)] $ openstack image create --file cirros.qcow2 --disk-format qcow2 cirros
 ```
 
 Ora possiamo lanciare la nostra istanza:
@@ -95,7 +101,7 @@ Come potrete vedere, vi verrà ritornata la macchina creata nell'esercizio prece
 #### caricare un ISO su Openstack
 Per questo esercizio ho precedentemente scaricato un'immagine della distribuzione fedora creata appositamente per il cloud, che ora andremo a caricare su Openstack come visto in precedenza:
 ```console
-[user@machine - (cl010u cl010)] $ openstack image create --file fedoracloud.qcow2 --format qcow2 fedoracloud
+[user@machine - (cl010u cl010)] $ openstack image create --file fedoracloud.qcow2 --disk-format qcow2 fedoracloud
 ```
 Una volta dato il comando ci verrà fornita in output la tabella con i valori che identificano le impostazioni dell'immagine caricata.
 
@@ -105,7 +111,7 @@ Possiamo dare un'occhiata a tutti i comandi che possiamo usare su Openstack tram
 [user@machine - (cl010u cl010)] $ openstack help server create | less
 
 ```
-Inoltre necessitiamo di avere una rete pronta, che potremo creare così:
+Inoltre necessitiamo di avere una rete pronta, che potremo creare così (oppure si possono usare le reti private e public create quando viene installato openstack):
 
 ```console
 [user@machine - (cl010u cl010)] $ openstack network create intNetcl010
