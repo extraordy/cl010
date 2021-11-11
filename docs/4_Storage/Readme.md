@@ -36,7 +36,7 @@ Successivamente è possibile proseguire verificando il volume creato:
 Per agganciare un volume ad un'istanza su Openstack lanciamo il comando:
 
 ```console
-[user@machine - (cl010u cl010)] $ openstack server add volume id_ volume id_istanza --device /dev/sdb
+[user@machine - (cl010u cl010)] $ openstack server add volume id_istanza id_volume
 ```
 
 > N.B.: Per recuperare l'id_istanza è possibile lanciare il comando **openstack server list**, il --device indica l'assegnazione del disco sull'instanza.
@@ -51,7 +51,7 @@ Il volume ora risulta "**in-use**" collegato alla nostra istanza, per verificare
 +--------------------------------------+---------------+-----------+------+-------------------------------------+
 ```
 
-Una volta agganciato il volume e dopo aver creato il filesystem, è possibile montarlo collegandosi in ssh o direttamente dalla console della dashboard:
+Una volta agganciato il volume e dopo aver creato il filesystem, è possibile montarlo direttamente dalla console della dashboard:
 
 ```console
 [user@machine - (cl010u cl010)] $ mkfs -t ext4 /dev/vdb
@@ -66,7 +66,7 @@ Una volta agganciato il volume e dopo aver creato il filesystem, è possibile mo
 E' possibile effetture il detach del volume, prima assicuratevi di aver smontato il disco dal mountpoint precedentemente creato:
 
 ```console
-[user@machine - (cl010u cl010)] $ openstack server remove volume  id_volume id_istanza
+[user@machine - (cl010u cl010)] $ openstack server remove volume id_istanza id_volume
 ```
 A questo punto il volume è stato smontato dall'istanza ma è ancora presente su Cinder, non ci resta che proseguire con l'eliminazione.
 

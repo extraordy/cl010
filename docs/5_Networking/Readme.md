@@ -34,7 +34,7 @@ Creiamo la subnet e colleghiamo alla network :
 
 A questo abbiamo creato la nostra internal network, per abilitarla al traffico esterno è necessario proseguire con la creazione del router.
 
-# Creazione di una Router
+# Creazione di un Router
 
 ### Esercizio
 **Creiamo un router chiamato router1**
@@ -48,22 +48,21 @@ Ora è possibile agganciare il router alla rete:
 ```console
 [user@machine - (cl010u cl010)] $ openstack router add subnet router1 subnet1
 ```
-> N.B.: E' necessario precedentemente a questo step, aver creato una external network. 
+> N.B.: E' necessario precedentemente a questo step, aver creato una external network che noi abbiamo configurato nell'installazione. 
 Infine sarà possibile aggiungere il router alla rete esterna:
 ```console
-[user@machine - (cl010u cl010)] $ openstack router set router1 --external-gateway id_external_network
+[user@machine - (cl010u cl010)] $ openstack router set router1 --external-gateway extnet_cl010
 ``` 
-> > N.B.: Ricorda che è necessario utilizzare una corretta configurazione dei security group abilitando il protocollo SSH per accedere alla vm.
 
 # Attach di un Foating IP 
 Se un pool di indirizzi IP, configurato dall'amministratore cloud, è disponibile in OpenStack, lo possiamo aggiungere alla nostra istanza:
 
 ## Esercizio
-**Stacchiamo un Floating* da pool*
+**Creiamo, allochiamo e deallochiamo un Floating da pool**
 ### Soluzione
 
 ```console
-[user@machine - (cl010u cl010)]openstack floating ip create pool_ip_name
+[user@machine - (cl010u cl010)]openstack floating ip create extnet_cl010
 ```
 A questo punto, recuperando il floating IP che abbiamo appena creato e l'ID del server, possiamo lanciare il comando:
 
@@ -75,9 +74,9 @@ Per rimuovere il Floating IP sarà sufficente:
  ```console
 [user@machine - (cl010u cl010)] $openstack server remove floating ip id_server FLOATING_IP
 ```
-In questo modo la nostra istanza non sarà più raggiungibile dall'eterno, ma il Floating IP rimane disponibile nel pool e pronto per essere riassociato.
+In questo modo la nostra istanza non sarà più raggiungibile dall'esterno, ma il Floating IP rimane disponibile nel pool e pronto per essere riassociato.
 
-Per eliminare il Floating ip dal pool:
+Per deallocare il Floating ip dal pool:
 
 ```console
 [user@machine - (cl010u cl010)] $ openstack floating ip delete FLOATING_IP
