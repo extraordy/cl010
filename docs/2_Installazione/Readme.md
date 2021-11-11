@@ -47,6 +47,10 @@ Id      Name            State
 [user@host] $ virsh shutdown centosVM
 ```
 ## Installazione del laboratorio di testing Openstack all-in-one
+
+> ATTENZIONE!
+> Questi sono i comandi per una macchina centos 8 ( **NON Centos stream** ), per ogni altra versione che volete utilizzare [qui potete trovare i comandi per tutte le altre distribuzioni supportate](https://www.rdoproject.org/install/packstack/)
+
 All'interno della nostra macchina di test possiamo dare i seguenti comandi, che ci forniranno l'ambiente di testing; per comodità andremo a disabilitare SELinux e firewalld per maggiore facilità d'utilizzo e cambieremo network manager da NetworkManager a network.
 ```console
 [user@machine] $ sudo dnf install network-scripts -y
