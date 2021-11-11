@@ -139,7 +139,7 @@ Creiamo ora una macchina, vengono mostrati i comandi per creare sia una macchina
 [user@machine - (cl010u cl010)] $ openstack server create --image fedoracloud --flavor m1.small \
 > --network intNetcl010 --key-name <nome chiave> cl010_VM1
 ```
-
+Con flavor intendiamo la dimensione standard che vogliamo dare alla nostra macchina, in termini di quante vCPU, Memoria e RAM vogliamo assegnarle; potete trovare maggiorni informazioni sul sito di Openstack.
 
 Fatto questo ci verrà ritornata una tabella con i parametri della VM appena creata e,attendendo qualche secondo, diamo nuovamente il comando **openstack server list** per verificare che la creazione sia andata a buon fine: se tutto è ok la VM dovrebbe avere lo status ACTIVE.
 
