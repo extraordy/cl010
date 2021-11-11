@@ -322,5 +322,5 @@ creiamo inoltre una subnet nell'external network
 > quella qui sopra è' la rete fisica su cui vive il server dove ho installato openstack.
 > Pertanto dovrete modificare il range dell'allocation pool in modo che non vada in conflitto con altri server gia' presenti sulla rete fisica, nell'esempio abbiamo impostato partendo da .248 fino ad arrivare a .252.
 
-[continuiamo ora con la parte 3_comandi base](../3_Comandi_base/Readme.md)
+[continuiamo ora con la parte 3: comandi base](../3_Comandi_base/Readme.md)
 

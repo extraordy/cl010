@@ -4,7 +4,7 @@
 **ATTENZIONE**
 
 Per una soluzione grafica fate riferimento al corso CL010 che potete trovare qui: https://www.cl010.it
-
+Inoltre per favorire la leggibilità non tutti gli output a schermo verranno mostrati.
 ---
 #### Convenzioni
 
