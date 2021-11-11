@@ -140,7 +140,7 @@ Questo comando creerà una macchina chiamata cl010_VM1 sul network creato preced
 
 Fatto questo ci verrà ritornata una tabella con i parametri della VM appena creata e,attendendo qualche secondo, diamo nuovamente il comando **openstack server list** per verificare che la creazione sia andata a buon fine: se tutto è ok la VM1 dovrebbe avere lo status ACTIVE.
 
-Per verificare il corretto funzionamento delle macchine basterà fare SSH nella macchina (il nome utente è fedora) o andare sul pannello di controllo nella sezione delle istanze e aprire la tendina della colonna action della VM che ci interessa; per farlo però dobbiamo impostare le chiavi SSH in quanto molte distribuzioni cloud disabilitano di base l'accesso via password.
+Per verificare il corretto funzionamento delle macchine basterà fare SSH nella macchina (il nome utente può essere reperito alla pagina di dowload delle immagini, nel caso di fedora cloud è fedora) o andare sul pannello di controllo nella sezione delle istanze e aprire la tendina della colonna action della VM che ci interessa; per farlo però dobbiamo impostare le chiavi SSH in quanto molte distribuzioni cloud disabilitano di base l'accesso via password.
 
 Per connetterci via SSH necessitiamo dei concetti di networking che vedremo più avanti, per intanto possiamo controllare il corretto boot della macchina tramite i log:
 ```console
