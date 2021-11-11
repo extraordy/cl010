@@ -3,7 +3,7 @@
 I requirement minimi per l'installazione sono una macchina con CPU capace di virtualizzazione, consigliamo 16GB di RAM (possibilmente dedicata, almeno installati) e almeno una scheda di rete; inoltre si consiglia di avere almeno 20GB di spazio disponibile su disco per avere abbastanza spazio di manovra per creare qualche istanza e qualche volume.
 
 ### Creazione della VM
-Per avere un ambiente di testing facilmente resettabile e riutilizzabile, installeremo il nostro laboratorio di test all'interno di una virtual machine.
+Per avere un ambiente di testing facilmente resettabile e riutilizzabile, installeremo il nostro laboratorio di test all'interno di una virtual machine (è estremamente sconsigliato farlo direttamente sul proprio sistema).
 
 Se non lo avete ancora fatto potete seguire [il nostro corso sulla virtualizzazione qui](https://rh018.it/) per avere tutti i dettagli più interessanti sulle varie tecnologie di virtualizzazione e orchestrazione di macchine virtuali come oVirt (discuteremo anche nella prossima sezione della differenza tra un'istanza Openstack e una macchina virtuale).
 
@@ -18,7 +18,7 @@ kvm_amd               118784  0
 kvm                   835584  1 kvm_amd
 ccp                   102400  1 kvm_amd
 ```
-Una volta che ci siamo assicurati che la nostra macchina supporti la virtualizzazione e installati il pacchetto di QEMU, scaricheremo un'appropriata ISO da utilizzare: noi di EXTRAORDY consigliamo di provare una macchina con Centos (come verrà mostrato qui in seguito) oppure con RHEL 8.4 (Richiederà una licenza aziendale o, se state testando in proprio e per fini non commerciali, [potete ottenere qui una licenza developer](https://developers.redhat.com/products/rhel/download) ) o con fedora, a seconda delle preferenze di ognuno.
+Una volta che ci siamo assicurati che la nostra macchina supporti la virtualizzazione e installati i pacchetti di libvirt, QEMU e gli altri di supporto, scaricheremo un'appropriata ISO da utilizzare: noi di EXTRAORDY consigliamo di provare una macchina con Centos (come verrà mostrato qui in seguito) oppure con RHEL 8.4 (Richiederà una licenza aziendale o, se state testando in proprio e per fini non commerciali, [potete ottenere qui una licenza developer](https://developers.redhat.com/products/rhel/download) ) o con fedora, a seconda delle preferenze di ognuno.
 
 Infine andremo a dare i seguenti comandi per creare ed avviare una macchina virtuale:
 ```console
@@ -27,7 +27,7 @@ Infine andremo a dare i seguenti comandi per creare ed avviare una macchina virt
 ```
 Con ovviamente cdrom la path per la iso sul vostro sistema e disk size di almeno 20GB.
 
-Una volta fatto questo vi verrà aperto un prompt che vi farà connettere alla vostra macchina virtuale su cui, una volta terminata l'installazione, potrete installare il lavoratorio di Openstack.
+Una volta fatto questo vi verrà aperto un prompt che vi farà connettere alla vostra macchina virtuale su cui, una volta terminata l'installazione, potrete installare il laboratorio di Openstack.
 
 Se vorrete riaprire più avanti questa macchina potrete utilizzare virsh con i seguenti comandi rispettivamente per visualizzare tutte le macchine installate via QEMU e per avviare la macchina.
 ```console
@@ -76,7 +76,7 @@ Error: NetworkManager is not running.
 [user@machine] $ sudo getenforce 
 Permissive
 ```
-verifichiamo la configurazione di rete su scheda enp1s0:
+verifichiamo la configurazione di rete su scheda enp1s0 (se la vostra scheda presenta un nome diverso sostituitelo a enp1s0):
 ```console
 [user@machine] $ ip a
 ...output omitted...
@@ -116,9 +116,11 @@ Packstack changed given value  to required value /root/.ssh/id_rsa.pub
 Additional information:
  * Parameter CONFIG_NEUTRON_L2_AGENT: You have chosen OVN Neutron backend. Note that this backend does not support the VPNaaS plugin. Geneve will be used as the encapsulation method for tenant networks
 ```
-Generato il file lo andremo a modificare creando packstack-answers_demo_cl010.txt, che sarà la versione usata per questo corso.
+Generato il file lo andremo a copiare con il nuovo nome packstack-answers_demo_cl010.txt e lo modificheremo per semplificarci la vita.
 Qui sotto sono riportate le differenze tra i due answers file che potete modificare voi stessi con un semplice editor di testo:
 ```console
+[user@machine] $ sudo cp packstack-answers.txt.orig packstack-answers_demo_cl010.txt
+[user@machine] $ sudo vim packstack-answers_demo_cl010.txt
 [user@machine] $ sudo diff packstack-answers.txt.orig packstack-answers_demo_cl010.txt
 323c323
 < CONFIG_KEYSTONE_ADMIN_PW=1ac5b07998154d45
