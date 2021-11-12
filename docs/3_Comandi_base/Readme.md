@@ -81,7 +81,7 @@ Le tre variabili da modificare saranno OS_USERNAME (sostituite con il nome dell'
 Prima di tutto dobbiamo caricare un sistema operativo funzionante all'interno del nostro sistema e qui andremo a caricare un'immagine molto particolare chiamata CirrOS, un sistema operativo Linux completo ma minimale, utile per testare il funzionamento di un sistema operativo in cloud; può essere reperito [qui](http://download.cirros-cloud.net/):
 
 ```console
-[user@machine - (cl010u cl010)] $ openstack image create --file cirros.qcow2 --disk-format qcow2 cirros
+[user@machine - (cl010u cl010p)] $ openstack image create --file cirros.qcow2 --disk-format qcow2 cirros
 ```
 
 Ora possiamo lanciare la nostra istanza ma prima aggiungiamo le chiavi SSH:
@@ -93,7 +93,7 @@ Ora possiamo lanciare la nostra istanza ma prima aggiungiamo le chiavi SSH:
 
 Da command line invece posso fare la stessa operazione con il comando (NB: è un comando unico, l'escape serve solo ad indicare che stiamo andando a capo, stessa cosa per il maggiore sulla seconda riga, non devono essere riportati e dovete dare il comando senza andare a capo).
 ```console
-[user@machine - (cl010u cl010)] $ openstack keypair create --private-key <nome da dare al file che contiene la private key> \
+[user@machine - (cl010u cl010p)] $ openstack keypair create --private-key <nome da dare al file che contiene la private key> \
 > --public-key <nome da dare alla chiave pubblica>
 ```
 Questo comando salverà nella path in cui siamo la chiave pubblica e quella privata, oltre a caricare direttamente la pubblica in Openstack.
@@ -110,40 +110,40 @@ Questo comando salverà nella path in cui siamo la chiave pubblica e quella priv
 Come visto sopra i files keystonerc caricano delle env variables che ci permettono di accedere facilmente alla nostra istanza di Openstack da riga di comando senza bisogno di ricordarci password o altro; per caricarle in memoria basta dare:
 ```console
 [user@machine] $ source keystonerc_cl010u
-[user@machine - (cl010u cl010)] $ 
+[user@machine - (cl010u cl010p)] $ 
 ```
 
 Ora vediamo le macchine virtuali create con il comando qui sotto mostrato, che ci ritornerà una lista delle VM create in precedenza,ovviamente delle quali ho visibilità come utente cl010u (siccome sono entrato con questo utente caricando il suo keystonerc).
 ```console
-[user@machine - (cl010u cl010)] $ openstack server list
+[user@machine - (cl010u cl010p)] $ openstack server list
 ```
 #### caricare un ISO su Openstack
 Per questo esercizio ho precedentemente scaricato un'immagine della distribuzione fedora creata appositamente per il cloud, che ora andremo a caricare su Openstack come visto in precedenza:
 ```console
-[user@machine - (cl010u cl010)] $ openstack image create --file fedoracloud.qcow2 --disk-format qcow2 fedoracloud
+[user@machine - (cl010u cl010p)] $ openstack image create --file fedoracloud.qcow2 --disk-format qcow2 fedoracloud
 ```
 Una volta dato il comando ci verrà fornita in output la tabella con i valori che identificano le impostazioni dell'immagine caricata.
 
 #### Creare un'istanza da riga di comando
 Possiamo dare un'occhiata a tutti i comandi che possiamo usare su Openstack tramite il comando help, come mostrato nel blocco qui sotto; questo comando verrà dato in pasto ad un paginatore (less) che ci permette di visualizzare con facilità le informazioni ritornateci: 
 ```console
-[user@machine - (cl010a cl010)] $ openstack help server create | less
+[user@machine - (cl010a cl010p)] $ openstack help server create | less
 
 ```
 Inoltre necessitiamo di avere una rete pronta, che potremo creare così, anche con l'utente cl010u che ha i privilegi più bassi in Openstack:
 
 ```console
-[user@machine - (cl010u cl010)] $ openstack network create intNetcl010
-[user@machine - (cl010u cl010)] $ openstack subnet create --network intnet_cl010 --dhcp \
+[user@machine - (cl010u cl010p)] $ openstack network create intNetcl010
+[user@machine - (cl010u cl010p)] $ openstack subnet create --network intnet_cl010 --dhcp \
 > --subnet-range 192.168.2.0/24 intnet_subnet_cl010
 ```
 Creiamo ora una macchina, vengono mostrati i comandi per creare sia una macchina con cirros (che è l'opzione consigliata in quanto richiede meno risorse e meno configurazioni) sia una fedora cloud (in questo caso la virtual machine deve avere più di 20GB di spazio disponibile in quanto il flavor scelto richiede 20GB di spazio minimo):
 ```console
-[user@machine - (cl010u cl010)] $ openstack server create --image cirros --flavor m1.tiny \
+[user@machine - (cl010u cl010p)] $ openstack server create --image cirros --flavor m1.tiny \
 > --network intNetcl010 --key-name <nome file chiave SSH> cl010_VM0
 ```
 ```console
-[user@machine - (cl010u cl010)] $ openstack server create --image fedoracloud --flavor m1.small \
+[user@machine - (cl010u cl010p)] $ openstack server create --image fedoracloud --flavor m1.small \
 > --network intNetcl010 --key-name <nome file chiave SSH> cl010_VM1
 ```
 > Con flavor intendiamo la dimensione standard che vogliamo dare alla nostra macchina, in termini di quante vCPU, spazio di archiviazione e RAM vogliamo assegnarle; potete trovare maggiorni informazioni sul sito di Openstack.
@@ -154,7 +154,7 @@ Per verificare il corretto funzionamento delle macchine basterà fare SSH nella 
 
 Per connetterci via SSH necessitiamo però dei concetti di networking che vedremo più avanti, per intanto possiamo controllare il corretto boot della macchina tramite i log:
 ```console
-[user@machine - (cl010u cl010)] $ openstack console log show cl010_VM0
+[user@machine - (cl010u cl010p)] $ openstack console log show cl010_VM0
 ```
 
 

@@ -16,12 +16,12 @@ I volumi sono dispositivi di archiviazione a blocchi collegati alle istanze. Puo
 Cominciamo con il creare un volume :
 
 ```console
-[user@machine - (cl010u cl010)] $ openstack volume create --size 8 my-new-volume 
+[user@machine - (cl010u cl010p)] $ openstack volume create --size 8 my-new-volume 
 ```
 
 Successivamente è possibile proseguire verificando il volume creato:
 ```console
-[user@machine - (cl010u cl010)] $ openstack volume list
+[user@machine - (cl010u cl010p)] $ openstack volume list
 +--------------------------------------+---------------+-----------+------+-------------+
 | ID                                   | Name          |  Status   | Size | Attached to |
 +--------------------------------------+---------------+-----------+------+-------------+
@@ -36,14 +36,14 @@ Successivamente è possibile proseguire verificando il volume creato:
 Per agganciare un volume ad un'istanza su Openstack lanciamo il comando:
 
 ```console
-[user@machine - (cl010u cl010)] $ openstack server add volume id_istanza id_volume
+[user@machine - (cl010u cl010p)] $ openstack server add volume id_istanza id_volume
 ```
 
 > N.B.: Per recuperare l'id_istanza è possibile lanciare il comando **openstack server list**, il --device indica l'assegnazione del disco sull'instanza.
 
 Il volume ora risulta "**in-use**" collegato alla nostra istanza, per verificare:
 ```console
-[user@machine - (cl010u cl010)] $ openstack volume list
+[user@machine - (cl010u cl010p)] $ openstack volume list
 +--------------------------------------+---------------+-----------+------+-------------------------------------+
 | ID                                   | Name          |  Status   | Size | Attached to                         |
 +--------------------------------------+---------------+-----------+------+-------------------------------------+
@@ -54,9 +54,9 @@ Il volume ora risulta "**in-use**" collegato alla nostra istanza, per verificare
 Una volta agganciato il volume e dopo aver creato il filesystem, è possibile montarlo direttamente dalla console della dashboard:
 
 ```console
-[user@machine - (cl010u cl010)] $ mkfs -t ext4 /dev/vdb
-[user@machine - (cl010u cl010)] $ mkdir /vdb
-[user@machine - (cl010u cl010)] $ mount -t ext4 /dev/vdb /vdb
+[user@machine - (cl010u cl010p)] $ mkfs -t ext4 /dev/vdb
+[user@machine - (cl010u cl010p)] $ mkdir /vdb
+[user@machine - (cl010u cl010p)] $ mount -t ext4 /dev/vdb /vdb
 ```
 
 ## Parte 2: Detach di un volume
@@ -66,7 +66,7 @@ Una volta agganciato il volume e dopo aver creato il filesystem, è possibile mo
 E' possibile effetture il detach del volume, prima assicuratevi di aver smontato il disco dal mountpoint precedentemente creato:
 
 ```console
-[user@machine - (cl010u cl010)] $ openstack server remove volume id_istanza id_volume
+[user@machine - (cl010u cl010p)] $ openstack server remove volume id_istanza id_volume
 ```
 A questo punto il volume è stato smontato dall'istanza ma è ancora presente su Cinder, non ci resta che proseguire con l'eliminazione.
 
@@ -76,7 +76,7 @@ A questo punto il volume è stato smontato dall'istanza ma è ancora presente su
 ### Soluzione
 E' possibile infine rimuovere il volume che abbiamo creato all'inizio con il comando:
 ```console
-[user@machine - (cl010u cl010)] $ openstack volume delete my-new-volume
+[user@machine - (cl010u cl010p)] $ openstack volume delete my-new-volume
 ```
 
 [Infine andiamo alla parte finale sul networking](../5_Networking/Readme.md)
