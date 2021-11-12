@@ -21,9 +21,9 @@ Ad oggi molte aziende supportano attivamente Openstack, ricordiamo qui alcuni me
     Come tutti i progetti Open source anche Openstack beneficia enormemente dal supporto di una grossa community di professionisti capaci e formati, che aiutano il progetto a crescere e migliorare ogni giorno di più, oltre ad ovviamente il supporto offerto da Red Hat e i Red Hat partner come EXTRAORDY, nei corsi di formazione come il CL110 e CL210 (Openstack Adminsitrator I e II).
 
 ## Quali sono i componenti di Openstack?
-Openstack è composto da vari moduli, che si occupano di gestire tutti i compiti del sistema: Openstack infatti è un wrapper python il cui compito originario era coordinare tutte queste tecnologie in un'unica soluzione più comoda da utilizzare; è comunque rimasta la possibilità di usare i singoli componenti.
+Openstack è composto da alcuni servizi principali, che si occupano di gestire i diversi aspetti dell'infrastruttura; l'obiettivo  originario del progetto era di coordinare tutte queste tecnologie in un'unica soluzione più comoda da utilizzare.
 
-Qui di sotto verranno introdotti alcuni dei più famosi:
+Qui di seguito verranno introdotti alcuni dei più importanti:
 - **Nova**
     Nova è la parte del progetto Openstack che fornisce le API necessarie per lanciare e gestire istanze (ossia i nostri server virtuali), utilizzando tutti gli altri tool per compiere le varie operazioni di supporto.
 - **Cinder**:
