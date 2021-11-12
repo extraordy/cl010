@@ -23,9 +23,9 @@ Una volta che ci siamo assicurati che la nostra macchina supporti la virtualizza
 Infine andremo a dare i seguenti comandi per creare ed avviare una macchina virtuale:
 ```console
 [user@host] $ virt-install --virt-type=kvm --name=centosVM --ram 16384 --vcpus 8 --os-variant=rhel8.5 --cdrom=$HOME/Downloads/rhel8-5.iso \
---network=default --graphics vnc --disk size=20 
+--network=default --graphics vnc --disk size=30 
 ```
-Con ovviamente cdrom la path per la iso sul vostro sistema e disk size di almeno 20GB.
+Con ovviamente cdrom la path per la iso sul vostro sistema e disk size di almeno 30GB.
 
 Una volta fatto questo vi verrà aperto un prompt che vi farà connettere alla vostra macchina virtuale su cui, una volta terminata l'installazione, potrete installare il laboratorio di Openstack.
 
