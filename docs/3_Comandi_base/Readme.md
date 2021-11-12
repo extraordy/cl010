@@ -65,7 +65,14 @@ All'utente **CL010u** abbiamo assegnato il ruolo di \_\_member\_\_ che è il ruo
 
 Una volta fatto questo ripetiamo il processo anche per un secondo utente, al quale però assegneremo il ruolo di admin del progetto, in modo da non dover utilizzare sempre l'amministratore di Openstack e iniziare quindi a capire le limitazioni assegnate ai vari utenti.
 
-Andiamo ora a creare i files keystonerc per entrambi gli user a partire da quelli che già abbiamo:
+Andiamo ora a creare i files keystonerc per entrambi gli user a partire da quello che già abbiamo, copiando il file e sostituendo al loro interno i nomi utenti appena creati, le rispettive password e mettiamo il progetto in cui ci vogliamo loggare, ossia cl010p:
+```console
+[user@machine - (admin admin)] $ cp keystonerc_admin keystonerc_cl010a
+[user@machine - (admin admin)] $ cp keystonerc_admin keystonerc_cl010u
+[user@machine - (admin admin)] $ vim keystonerc_cl010a
+[user@machine - (admin admin)] $ vim keystonerc_cl010u
+```
+Le tre variabili da modificare saranno OS_USERNAME (sostituite con il nome dell'utente del quale state creando il keystonerc), OS_PASSWORD (in cui metterete la password dell'utente) e infine OS_PROJECT_NAME in cui indicherete il progetto sul quale volete che l'utente inserito vuole loggarsi (in questo caso il nostro progetto cl010p).
 
 ## Parte 2: Caricamento di un sistema operativo
 ### Esercizio
